@@ -3,7 +3,11 @@
 Format follows [Keep a Changelog](https://keepachangelog.com/); versions follow [SemVer](https://semver.org/).
 Published codes are never removed (see README, "Code stability").
 
-## [1.0.0] - 2026-11-08
+## [1.0.1] - 2026-11-08
+
+First release on nuget.org. The `v1.0.0` tag was never published: nuget.org rejected its license expression, so the packages now ship `PACKAGE_LICENSE.txt` (MIT for the code, CC BY-IGO 3.0 / CC0 / CC BY 4.0 for the data). No code or data changes from 1.0.0.
+
+## [1.0.0] - 2026-11-08 (tagged, not published)
 
 ### Added
 - 19 governorates, 101 districts and 294 sub-districts: OCHA COD-AB Iraq (v01) with hierarchical OCHA P-codes, plus Halabja Governorate (`IQG19`, law in force since 2025-05-05) applied through `data/overrides/restructures.json`; the old `IQG06Q05…` codes stay resolvable as deprecated.
