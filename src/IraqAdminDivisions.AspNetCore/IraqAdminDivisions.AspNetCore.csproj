@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>IraqAdminDivisions.AspNetCore</RootNamespace>
+    <PackageId>IraqAdminDivisions.AspNetCore</PackageId>
+    <Version>1.0.0</Version>
+    <IsPackable>true</IsPackable>
+    <Description>ASP.NET Core Minimal API endpoints for IraqAdminDivisions: one call to MapIraqDivisions() exposes governorates, children, search and nearest lookups for cascading address dropdowns in Arabic, English and Kurdish.</Description>
+    <PackageTags>$(PackageTags);aspnetcore;minimal-api</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../IraqAdminDivisions/IraqAdminDivisions.csproj" />
+  </ItemGroup>
+
+</Project>

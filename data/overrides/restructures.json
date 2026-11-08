@@ -1,0 +1,33 @@
+{
+  "restructures": [
+    {
+      "id": "halabja-governorate",
+      "effectiveDate": "2025-05-05",
+      "reason": "Law establishing Halabja Governorate (قانون استحداث محافظة حلبجة) passed by the Council of Representatives on 2025-04-14, ratified by presidential decree on 2025-04-29 and published in the Official Gazette on 2025-05-05; Federal Supreme Court challenges rejected. OCHA COD-AB v01 still lists Halabja as a district of Sulaymaniyah, so the OCHA district and its four sub-districts move unchanged under a new governorate. Federal sources list the sub-districts as Sirwan, Khurmal, Biyara and Bamo; OCHA has Biyara, Khurmal, Markaz Halabja and Shahrazur, so the placement of Shahrazur is unconfirmed and Sirwan/Bamo have no OCHA geometry. No ISO 3166-2 code is confirmed by ISO (Wikidata lists IQ-HA), so isoCode stays null.",
+      "sources": [
+        "https://shafaq.com/ar/سیاسة/البرلمان-يصوت-على-استحداث-محافظة-حلبجة",
+        "https://www.kurdistan24.net/ar/story/853315",
+        "https://www.kurdistan24.net/ar/story/320256",
+        "https://www.pukmedia.com/EN/Details/78023",
+        "https://en.wikipedia.org/wiki/Halabja_Governorate"
+      ],
+      "newDivisions": [
+        {
+          "code": "IQG19",
+          "level": "Governorate",
+          "name": { "ar": "حلبجة", "en": "Halabja", "ku": "ھەڵەبجە" },
+          "aliases": [ "محافظة حلبجة", "Halabja Governorate", "Halabcha", "پارێزگای ھەڵەبجە" ],
+          "wikidataId": "Q15631321",
+          "geometryFrom": "IQG06Q05"
+        }
+      ],
+      "moves": [
+        { "from": "IQG06Q05", "to": "IQG19Q01", "parentCode": "IQG19" },
+        { "from": "IQG06Q05N01", "to": "IQG19Q01N01", "parentCode": "IQG19Q01" },
+        { "from": "IQG06Q05N02", "to": "IQG19Q01N02", "parentCode": "IQG19Q01" },
+        { "from": "IQG06Q05N03", "to": "IQG19Q01N03", "parentCode": "IQG19Q01" },
+        { "from": "IQG06Q05N04", "to": "IQG19Q01N04", "parentCode": "IQG19Q01" }
+      ]
+    }
+  ]
+}

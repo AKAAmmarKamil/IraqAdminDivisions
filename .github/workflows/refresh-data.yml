@@ -1,0 +1,32 @@
+name: Refresh data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 1 * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet run --project tools/IraqAdminDivisions.Builder -c Release -- --refresh
+      - run: dotnet test IraqAdminDivisions.slnx -c Release
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: |
+            data
+            reports
+          branch: automation/refresh-data
+          commit-message: "data: refresh from OCHA and Wikidata"
+          title: "data: refresh from OCHA and Wikidata"
+          body: "Automated refresh. Review reports/build-report.md and the data/ diff before merging."

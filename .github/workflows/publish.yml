@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - name: Read version from tag
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+      - run: dotnet restore IraqAdminDivisions.slnx
+      - run: dotnet build IraqAdminDivisions.slnx -c Release --no-restore -p:Version=$VERSION
+      - run: dotnet test IraqAdminDivisions.slnx -c Release --no-build
+      - run: dotnet pack IraqAdminDivisions.slnx -c Release --no-build -p:Version=$VERSION -o ./artifacts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: artifacts/*
+      - name: Push packages to NuGet
+        run: dotnet nuget push "artifacts/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Push symbol packages to NuGet
+        run: dotnet nuget push "artifacts/*.snupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate

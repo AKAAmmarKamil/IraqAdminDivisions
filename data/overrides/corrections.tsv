@@ -1,0 +1,7 @@
+code	field	value	reason
+IQG10Q03	ar	بلدروز	OCHA v01 gives the district the Arabic name of its sub-district Mandali; English is Baladruz and its centre is Markaz Baladruz
+IQG17Q04N02	ar	مركز الناصرية	OCHA v01 is missing the space between the two words
+IQG17Q04N03	ar	سيد دخيل	OCHA v01 Arabic reads Sayid Khalil while the English and the real sub-district are Sayid Dakhil
+IQG06Q02N01	ar	آغجلر	OCHA v01 Arabic field holds old Kurdish-in-Arabic typing (ئاغجة لةر)
+IQG15Q06N03	ar	أتروش	OCHA v01 Arabic field holds old Kurdish-in-Arabic typing (ئةتريش)
+IQG06Q01N01	ku	بازیان	Wikidata ckb label is the district-centre item (ناوەندی قەزای بازیان), not the sub-district name

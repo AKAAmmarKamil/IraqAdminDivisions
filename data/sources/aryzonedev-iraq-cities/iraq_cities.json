@@ -1,0 +1,1236 @@
+{
+  "governorates": [
+    {
+      "id": "erbil",
+      "name_en": "Erbil",
+      "name_ar": "أربيل",
+      "name_ckb": "هەولێر",
+      "cities": [
+        {
+          "id": "erbil",
+          "name_en": "Erbil Center",
+          "name_ar": "مركز أربيل",
+          "name_ckb": "ناوەندی هەولێر"
+        },
+        {
+          "id": "ankawa",
+          "name_en": "Ankawa",
+          "name_ar": "عنكاوة",
+          "name_ckb": "عەنکاوە"
+        },
+        {
+          "id": "pirmam",
+          "name_en": "Pirmam",
+          "name_ar": "بيرمام",
+          "name_ckb": "پیرمام"
+        },
+        {
+          "id": "qushtapa",
+          "name_en": "Qushtapa",
+          "name_ar": "قوشتبة",
+          "name_ckb": "قوشتەپە"
+        },
+        {
+          "id": "harir",
+          "name_en": "Harir",
+          "name_ar": "هرير",
+          "name_ckb": "هەریر"
+        },
+        {
+          "id": "koya",
+          "name_en": "Koya",
+          "name_ar": "كويسنجق",
+          "name_ckb": "کۆیە"
+        },
+        {
+          "id": "taqtaq",
+          "name_en": "Taqtaq",
+          "name_ar": "طقطق",
+          "name_ckb": "تەقتەق"
+        },
+        {
+          "id": "khabat",
+          "name_en": "Khabat",
+          "name_ar": "خبات",
+          "name_ckb": "خەبات"
+        },
+        {
+          "id": "shaqlawa",
+          "name_en": "Shaqlawa",
+          "name_ar": "شقلاوة",
+          "name_ckb": "شەقڵاوە"
+        },
+        {
+          "id": "makhmur",
+          "name_en": "Makhmur",
+          "name_ar": "مخمور",
+          "name_ckb": "مەخموور"
+        },
+        {
+          "id": "soran",
+          "name_en": "Soran",
+          "name_ar": "سوران",
+          "name_ckb": "سۆران"
+        },
+        {
+          "id": "rawanduz",
+          "name_en": "Rawanduz",
+          "name_ar": "راوندوز",
+          "name_ckb": "ڕەواندز"
+        },
+        {
+          "id": "choman",
+          "name_en": "Choman",
+          "name_ar": "جومان",
+          "name_ckb": "چۆمان"
+        },
+        {
+          "id": "mergasur",
+          "name_en": "Mergasur",
+          "name_ar": "ميركسور",
+          "name_ckb": "مێرگەسۆر"
+        },
+        {
+          "id": "sidakan",
+          "name_en": "Sidakan",
+          "name_ar": "سيدكان",
+          "name_ckb": "سیدەکان"
+        },
+        {
+          "id": "khalifan",
+          "name_en": "Khalifan",
+          "name_ar": "خليفان",
+          "name_ckb": "خەلیفان"
+        }
+      ]
+    },
+    {
+      "id": "sulaymaniyah",
+      "name_en": "Sulaymaniyah",
+      "name_ar": "السليمانية",
+      "name_ckb": "سلێمانی",
+      "cities": [
+        {
+          "id": "sulaymaniyah",
+          "name_en": "Sulaymaniyah Center",
+          "name_ar": "مركز السليمانية",
+          "name_ckb": "ناوەندی سلێمانی"
+        },
+        {
+          "id": "bazian",
+          "name_en": "Bazian",
+          "name_ar": "بازيان",
+          "name_ckb": "بازیان"
+        },
+        {
+          "id": "chamchamal",
+          "name_en": "Chamchamal",
+          "name_ar": "جمجمال",
+          "name_ckb": "چەمچەماڵ"
+        },
+        {
+          "id": "darbandikhan",
+          "name_en": "Darbandikhan",
+          "name_ar": "دربندخان",
+          "name_ckb": "دەربەندیخان"
+        },
+        {
+          "id": "dukan",
+          "name_en": "Dukan",
+          "name_ar": "دوكان",
+          "name_ckb": "دووکان"
+        },
+        {
+          "id": "mawat",
+          "name_en": "Mawat",
+          "name_ar": "ماوت",
+          "name_ckb": "ماوەت"
+        },
+        {
+          "id": "penjwen",
+          "name_en": "Penjwen",
+          "name_ar": "بنجوين",
+          "name_ckb": "پێنجوێن"
+        },
+        {
+          "id": "qaradagh",
+          "name_en": "Qaradagh",
+          "name_ar": "قرداغ",
+          "name_ckb": "قەرەداغ"
+        },
+        {
+          "id": "said-sadiq",
+          "name_en": "Said Sadiq",
+          "name_ar": "سيد صادق",
+          "name_ckb": "سەید سادق"
+        },
+        {
+          "id": "sharazur",
+          "name_en": "Sharazur",
+          "name_ar": "شهرزور",
+          "name_ckb": "شارەزوور"
+        },
+        {
+          "id": "sharbazher",
+          "name_en": "Sharbazher",
+          "name_ar": "شاربازير",
+          "name_ckb": "شارباژێڕ"
+        },
+        {
+          "id": "kalar",
+          "name_en": "Kalar",
+          "name_ar": "كلار",
+          "name_ckb": "کەلار"
+        },
+        {
+          "id": "rizgari",
+          "name_en": "Rizgari",
+          "name_ar": "رزكاري",
+          "name_ckb": "ڕزگاری"
+        },
+        {
+          "id": "rania",
+          "name_en": "Rania",
+          "name_ar": "رانية",
+          "name_ckb": "ڕانیە"
+        },
+        {
+          "id": "hajiawa",
+          "name_en": "Hajiawa",
+          "name_ar": "حاجياوة",
+          "name_ckb": "حاجیاوا"
+        },
+        {
+          "id": "pshdar",
+          "name_en": "Pshdar",
+          "name_ar": "بشدر",
+          "name_ckb": "پشدەر"
+        }
+      ]
+    },
+    {
+      "id": "duhok",
+      "name_en": "Duhok",
+      "name_ar": "دهوك",
+      "name_ckb": "دهۆک",
+      "cities": [
+        {
+          "id": "duhok",
+          "name_en": "Duhok Center",
+          "name_ar": "مركز دهوك",
+          "name_ckb": "ناوەندی دهۆک"
+        },
+        {
+          "id": "zakho",
+          "name_en": "Zakho",
+          "name_ar": "زاخو",
+          "name_ckb": "زاخۆ"
+        },
+        {
+          "id": "batifa",
+          "name_en": "Batifa",
+          "name_ar": "باطوفا",
+          "name_ckb": "باتیفا"
+        },
+        {
+          "id": "amedi",
+          "name_en": "Amedi",
+          "name_ar": "العمادية",
+          "name_ckb": "ئامێدی"
+        },
+        {
+          "id": "semel",
+          "name_en": "Semel",
+          "name_ar": "سميل",
+          "name_ckb": "سێمێل"
+        },
+        {
+          "id": "akre",
+          "name_en": "Akre",
+          "name_ar": "عقرة",
+          "name_ckb": "ئاکرێ"
+        },
+        {
+          "id": "bardarash",
+          "name_en": "Bardarash",
+          "name_ar": "بردرش",
+          "name_ckb": "بەردەڕەش"
+        },
+        {
+          "id": "shekhan",
+          "name_en": "Shekhan",
+          "name_ar": "الشيخان",
+          "name_ckb": "شێخان"
+        }
+      ]
+    },
+    {
+      "id": "halabja",
+      "name_en": "Halabja",
+      "name_ar": "حلبجة",
+      "name_ckb": "هەڵەبجە",
+      "cities": [
+        {
+          "id": "halabja",
+          "name_en": "Halabja Center",
+          "name_ar": "مركز حلبجة",
+          "name_ckb": "ناوەندی هەڵەبجە"
+        },
+        {
+          "id": "khurmal",
+          "name_en": "Khurmal",
+          "name_ar": "خورمال",
+          "name_ckb": "خورماڵ"
+        }
+      ]
+    },
+    {
+      "id": "baghdad",
+      "name_en": "Baghdad",
+      "name_ar": "بغداد",
+      "name_ckb": "بەغدا",
+      "cities": [
+        {
+          "id": "baghdad",
+          "name_en": "Baghdad Center",
+          "name_ar": "مركز بغداد",
+          "name_ckb": "ناوەندی بەغدا"
+        },
+        {
+          "id": "rusafa",
+          "name_en": "Rusafa",
+          "name_ar": "الرصافة",
+          "name_ckb": "ڕوسافە"
+        },
+        {
+          "id": "adhamiya",
+          "name_en": "Adhamiya",
+          "name_ar": "الأعظمية",
+          "name_ckb": "ئەعزەمیە"
+        },
+        {
+          "id": "sadr-city-1",
+          "name_en": "Sadr City 1",
+          "name_ar": "الصدر الأولى",
+          "name_ckb": "سەدری یەکەم"
+        },
+        {
+          "id": "sadr-city-2",
+          "name_en": "Sadr City 2",
+          "name_ar": "الصدر الثانية",
+          "name_ckb": "سەدری دووەم"
+        },
+        {
+          "id": "karkh",
+          "name_en": "Karkh",
+          "name_ar": "الكرخ",
+          "name_ckb": "کەرخ"
+        },
+        {
+          "id": "kadhimiya",
+          "name_en": "Kadhimiya",
+          "name_ar": "الكاظمية",
+          "name_ckb": "کازمیە"
+        },
+        {
+          "id": "abu-ghraib",
+          "name_en": "Abu Ghraib",
+          "name_ar": "أبو غريب",
+          "name_ckb": "ئەبو غرێب"
+        },
+        {
+          "id": "madain",
+          "name_en": "Madain",
+          "name_ar": "المدائن",
+          "name_ckb": "مەدائین"
+        },
+        {
+          "id": "mahmoudiya",
+          "name_en": "Mahmoudiya",
+          "name_ar": "المحمودية",
+          "name_ckb": "مەحموودیە"
+        },
+        {
+          "id": "tarmiya",
+          "name_en": "Tarmiya",
+          "name_ar": "الطارمية",
+          "name_ckb": "تارمیە"
+        },
+        {
+          "id": "taji",
+          "name_en": "Taji",
+          "name_ar": "التاجي",
+          "name_ckb": "تاجی"
+        },
+        {
+          "id": "rashidiya",
+          "name_en": "Rashidiya",
+          "name_ar": "الراشدية",
+          "name_ckb": "ڕاشدیە"
+        },
+        {
+          "id": "zuhur",
+          "name_en": "Zuhur",
+          "name_ar": "الزهور",
+          "name_ckb": "زوهوور"
+        },
+        {
+          "id": "zawraa",
+          "name_en": "Zawraa",
+          "name_ar": "الزوراء",
+          "name_ckb": "زەورا"
+        },
+        {
+          "id": "sama-al-kadhimiya",
+          "name_en": "Sama Al-Kadhimiya",
+          "name_ar": "سما الكاظمية",
+          "name_ckb": "سەما کازمیە"
+        }
+      ]
+    },
+    {
+      "id": "ninewa",
+      "name_en": "Ninewa",
+      "name_ar": "نينوى",
+      "name_ckb": "نەینەوا",
+      "cities": [
+        {
+          "id": "mosul",
+          "name_en": "Mosul Center",
+          "name_ar": "مركز الموصل",
+          "name_ckb": "ناوەندی موسڵ"
+        },
+        {
+          "id": "tel-afar",
+          "name_en": "Tel Afar",
+          "name_ar": "تلعفر",
+          "name_ckb": "تەلەعفەر"
+        },
+        {
+          "id": "sinjar",
+          "name_en": "Sinjar",
+          "name_ar": "سنجار",
+          "name_ckb": "شنگال"
+        },
+        {
+          "id": "hamdaniya",
+          "name_en": "Hamdaniya",
+          "name_ar": "الحمدانية",
+          "name_ckb": "حەمدانیە"
+        },
+        {
+          "id": "tel-kaif",
+          "name_en": "Tel Kaif",
+          "name_ar": "تلكيف",
+          "name_ckb": "تەلکێف"
+        },
+        {
+          "id": "baaj",
+          "name_en": "Baaj",
+          "name_ar": "البعاج",
+          "name_ckb": "بەعاج"
+        },
+        {
+          "id": "hatra",
+          "name_en": "Hatra",
+          "name_ar": "الحضر",
+          "name_ckb": "حەزەر"
+        }
+      ]
+    },
+    {
+      "id": "kirkuk",
+      "name_en": "Kirkuk",
+      "name_ar": "كركوك",
+      "name_ckb": "کەرکووک",
+      "cities": [
+        {
+          "id": "kirkuk",
+          "name_en": "Kirkuk Center",
+          "name_ar": "مركز كركوك",
+          "name_ckb": "ناوەندی کەرکووک"
+        },
+        {
+          "id": "hawija",
+          "name_en": "Hawija",
+          "name_ar": "الحويجة",
+          "name_ckb": "حەویجە"
+        },
+        {
+          "id": "daquq",
+          "name_en": "Daquq",
+          "name_ar": "داقوق",
+          "name_ckb": "داقووق"
+        },
+        {
+          "id": "dibis",
+          "name_en": "Dibis",
+          "name_ar": "الدبس",
+          "name_ckb": "دبس"
+        }
+      ]
+    },
+    {
+      "id": "diyala",
+      "name_en": "Diyala",
+      "name_ar": "ديالى",
+      "name_ckb": "دیالە",
+      "cities": [
+        {
+          "id": "baquba",
+          "name_en": "Baquba Center",
+          "name_ar": "مركز بعقوبة",
+          "name_ckb": "ناوەندی بەعقووبە"
+        },
+        {
+          "id": "khalis",
+          "name_en": "Khalis",
+          "name_ar": "الخالص",
+          "name_ckb": "خالس"
+        },
+        {
+          "id": "muqdadiya",
+          "name_en": "Muqdadiya",
+          "name_ar": "المقدادية",
+          "name_ckb": "موقدادیە"
+        },
+        {
+          "id": "baladruz",
+          "name_en": "Baladruz",
+          "name_ar": "بلدروز",
+          "name_ckb": "بەلەدڕوز"
+        },
+        {
+          "id": "khanaqin",
+          "name_en": "Khanaqin",
+          "name_ar": "خانقين",
+          "name_ckb": "خانەقین"
+        },
+        {
+          "id": "kifri",
+          "name_en": "Kifri",
+          "name_ar": "كفري",
+          "name_ckb": "کفری"
+        },
+        {
+          "id": "mansuriya",
+          "name_en": "Mansuriya",
+          "name_ar": "المنصورية",
+          "name_ckb": "مەنسووریە"
+        },
+        {
+          "id": "mandali",
+          "name_en": "Mandali",
+          "name_ar": "مندلي",
+          "name_ckb": "مەندەلی"
+        }
+      ]
+    },
+    {
+      "id": "salah-al-din",
+      "name_en": "Salah Al-Din",
+      "name_ar": "صلاح الدين",
+      "name_ckb": "سەڵاحەدین",
+      "cities": [
+        {
+          "id": "tikrit",
+          "name_en": "Tikrit Center",
+          "name_ar": "مركز تكريت",
+          "name_ckb": "ناوەندی تکریت"
+        },
+        {
+          "id": "samarra",
+          "name_en": "Samarra",
+          "name_ar": "سامراء",
+          "name_ckb": "سامەڕا"
+        },
+        {
+          "id": "balad",
+          "name_en": "Balad",
+          "name_ar": "بلد",
+          "name_ckb": "بەلەد"
+        },
+        {
+          "id": "baiji",
+          "name_en": "Baiji",
+          "name_ar": "بيجي",
+          "name_ckb": "بێجی"
+        },
+        {
+          "id": "shirqat",
+          "name_en": "Shirqat",
+          "name_ar": "الشرقاط",
+          "name_ckb": "شەرقات"
+        },
+        {
+          "id": "tuz-khurmatu",
+          "name_en": "Tuz Khurmatu",
+          "name_ar": "طوز خورماتو",
+          "name_ckb": "دووز خورماتوو"
+        },
+        {
+          "id": "dujail",
+          "name_en": "Dujail",
+          "name_ar": "الدجيل",
+          "name_ckb": "دوجەیل"
+        },
+        {
+          "id": "daur",
+          "name_en": "Daur",
+          "name_ar": "الدور",
+          "name_ckb": "دەور"
+        },
+        {
+          "id": "dhuluiya",
+          "name_en": "Dhuluiya",
+          "name_ar": "الضلوعية",
+          "name_ckb": "زولوعیە"
+        },
+        {
+          "id": "alam",
+          "name_en": "Alam",
+          "name_ar": "العلم",
+          "name_ckb": "عەلەم"
+        },
+        {
+          "id": "amirli",
+          "name_en": "Amirli",
+          "name_ar": "آمرلي",
+          "name_ckb": "ئامرلی"
+        }
+      ]
+    },
+    {
+      "id": "anbar",
+      "name_en": "Anbar",
+      "name_ar": "الأنبار",
+      "name_ckb": "ئەنبار",
+      "cities": [
+        {
+          "id": "ramadi",
+          "name_en": "Ramadi Center",
+          "name_ar": "مركز الرمادي",
+          "name_ckb": "ناوەندی ڕەمادی"
+        },
+        {
+          "id": "fallujah",
+          "name_en": "Fallujah",
+          "name_ar": "الفلوجة",
+          "name_ckb": "فەللووجە"
+        },
+        {
+          "id": "qaim",
+          "name_en": "Qaim",
+          "name_ar": "القائم",
+          "name_ckb": "قائیم"
+        },
+        {
+          "id": "rutba",
+          "name_en": "Rutba",
+          "name_ar": "الرطبة",
+          "name_ckb": "ڕوتبە"
+        },
+        {
+          "id": "ana",
+          "name_en": "Ana",
+          "name_ar": "عانة",
+          "name_ckb": "عانە"
+        },
+        {
+          "id": "haditha",
+          "name_en": "Haditha",
+          "name_ar": "حديثة",
+          "name_ckb": "حەدیسە"
+        },
+        {
+          "id": "hit",
+          "name_en": "Hit",
+          "name_ar": "هيت",
+          "name_ckb": "هیت"
+        },
+        {
+          "id": "rawa",
+          "name_en": "Rawa",
+          "name_ar": "راوة",
+          "name_ckb": "ڕاوە"
+        },
+        {
+          "id": "amiriyah",
+          "name_en": "Amiriyah",
+          "name_ar": "العامرية",
+          "name_ckb": "عامریە"
+        },
+        {
+          "id": "habbaniyah",
+          "name_en": "Habbaniyah",
+          "name_ar": "الحبانية",
+          "name_ckb": "حەبانیە"
+        },
+        {
+          "id": "karma",
+          "name_en": "Karma",
+          "name_ar": "الكرمة",
+          "name_ckb": "کەرمە"
+        }
+      ]
+    },
+    {
+      "id": "basra",
+      "name_en": "Basra",
+      "name_ar": "البصرة",
+      "name_ckb": "بەسرە",
+      "cities": [
+        {
+          "id": "basra",
+          "name_en": "Basra Center",
+          "name_ar": "مركز البصرة",
+          "name_ckb": "ناوەندی بەسرە"
+        },
+        {
+          "id": "zubair",
+          "name_en": "Zubair",
+          "name_ar": "الزبير",
+          "name_ckb": "زوبێر"
+        },
+        {
+          "id": "qurna",
+          "name_en": "Qurna",
+          "name_ar": "القرنة",
+          "name_ckb": "قورنە"
+        },
+        {
+          "id": "faw",
+          "name_en": "Faw",
+          "name_ar": "الفاو",
+          "name_ckb": "فاو"
+        },
+        {
+          "id": "abu-al-khaseeb",
+          "name_en": "Abu Al-Khaseeb",
+          "name_ar": "أبو الخصيب",
+          "name_ckb": "ئەبولخەسیب"
+        },
+        {
+          "id": "midaina",
+          "name_en": "Midaina",
+          "name_ar": "المدينة",
+          "name_ckb": "میدەینە"
+        },
+        {
+          "id": "shatt-al-arab",
+          "name_en": "Shatt Al-Arab",
+          "name_ar": "شط العرب",
+          "name_ckb": "شەتولعەرەب"
+        },
+        {
+          "id": "dair",
+          "name_en": "Dair",
+          "name_ar": "الدير",
+          "name_ckb": "دێر"
+        },
+        {
+          "id": "haritha",
+          "name_en": "Haritha",
+          "name_ar": "الهارثة",
+          "name_ckb": "هاریسە"
+        },
+        {
+          "id": "imam-sadiq",
+          "name_en": "Imam Sadiq",
+          "name_ar": "الإمام الصادق",
+          "name_ckb": "ئیمام سادق"
+        },
+        {
+          "id": "safwan",
+          "name_en": "Safwan",
+          "name_ar": "سفوان",
+          "name_ckb": "سەفوان"
+        }
+      ]
+    },
+    {
+      "id": "babil",
+      "name_en": "Babil",
+      "name_ar": "بابل",
+      "name_ckb": "بابل",
+      "cities": [
+        {
+          "id": "hilla",
+          "name_en": "Hilla Center",
+          "name_ar": "مركز الحلة",
+          "name_ckb": "ناوەندی حیللە"
+        },
+        {
+          "id": "mahawil",
+          "name_en": "Mahawil",
+          "name_ar": "المحاويل",
+          "name_ckb": "مەحاویل"
+        },
+        {
+          "id": "musayab",
+          "name_en": "Musayab",
+          "name_ar": "المسيب",
+          "name_ckb": "موسەیب"
+        },
+        {
+          "id": "hashimiya",
+          "name_en": "Hashimiya",
+          "name_ar": "الهاشمية",
+          "name_ckb": "هاشمیە"
+        },
+        {
+          "id": "kifl",
+          "name_en": "Kifl",
+          "name_ar": "الكفل",
+          "name_ckb": "کفل"
+        },
+        {
+          "id": "qasim",
+          "name_en": "Qasim",
+          "name_ar": "القاسم",
+          "name_ckb": "قاسم"
+        },
+        {
+          "id": "kutha",
+          "name_en": "Kutha",
+          "name_ar": "كوثى",
+          "name_ckb": "کووسا"
+        }
+      ]
+    },
+    {
+      "id": "karbala",
+      "name_en": "Karbala",
+      "name_ar": "كربلاء",
+      "name_ckb": "کەربەلا",
+      "cities": [
+        {
+          "id": "karbala",
+          "name_en": "Karbala Center",
+          "name_ar": "مركز كربلاء",
+          "name_ckb": "ناوەندی کەربەلا"
+        },
+        {
+          "id": "hindiya",
+          "name_en": "Hindiya",
+          "name_ar": "الهندية",
+          "name_ckb": "هیندیە"
+        },
+        {
+          "id": "ain-al-tamur",
+          "name_en": "Ain Al-Tamur",
+          "name_ar": "عين التمر",
+          "name_ckb": "عەین تەمر"
+        },
+        {
+          "id": "hur",
+          "name_en": "Hur",
+          "name_ar": "الحر",
+          "name_ckb": "حوڕ"
+        },
+        {
+          "id": "husayniya",
+          "name_en": "Husayniya",
+          "name_ar": "الحسينية",
+          "name_ckb": "حوسەینیە"
+        },
+        {
+          "id": "jadwal-al-gharbi",
+          "name_en": "Jadwal Al-Gharbi",
+          "name_ar": "الجدول الغربي",
+          "name_ckb": "جەدوەلی غەربی"
+        }
+      ]
+    },
+    {
+      "id": "najaf",
+      "name_en": "Najaf",
+      "name_ar": "النجف",
+      "name_ckb": "نەجەف",
+      "cities": [
+        {
+          "id": "najaf",
+          "name_en": "Najaf Center",
+          "name_ar": "مركز النجف",
+          "name_ckb": "ناوەندی نەجەف"
+        },
+        {
+          "id": "kufa",
+          "name_en": "Kufa",
+          "name_ar": "الكوفة",
+          "name_ckb": "کووفە"
+        },
+        {
+          "id": "manathera",
+          "name_en": "Manathera",
+          "name_ar": "المناذرة",
+          "name_ckb": "مەنازرە"
+        },
+        {
+          "id": "mishkhab",
+          "name_en": "Mishkhab",
+          "name_ar": "المشخاب",
+          "name_ckb": "مشخاب"
+        }
+      ]
+    },
+    {
+      "id": "wasit",
+      "name_en": "Wasit",
+      "name_ar": "واسط",
+      "name_ckb": "واست",
+      "cities": [
+        {
+          "id": "kut",
+          "name_en": "Kut Center",
+          "name_ar": "مركز الكوت",
+          "name_ckb": "ناوەندی کووت"
+        },
+        {
+          "id": "aziziya",
+          "name_en": "Aziziya",
+          "name_ar": "العزيزية",
+          "name_ckb": "عەزیزیە"
+        },
+        {
+          "id": "hai",
+          "name_en": "Hai",
+          "name_ar": "الحي",
+          "name_ckb": "حەی"
+        },
+        {
+          "id": "numaniya",
+          "name_en": "Numaniya",
+          "name_ar": "النعمانية",
+          "name_ckb": "نوعمانیە"
+        },
+        {
+          "id": "suwaira",
+          "name_en": "Suwaira",
+          "name_ar": "الصويرة",
+          "name_ckb": "سوەیرە"
+        },
+        {
+          "id": "badra",
+          "name_en": "Badra",
+          "name_ar": "بدرة",
+          "name_ckb": "بەدرە"
+        },
+        {
+          "id": "ahrar",
+          "name_en": "Ahrar",
+          "name_ar": "الأحرار",
+          "name_ckb": "ئەحرار"
+        },
+        {
+          "id": "muwafaqiya",
+          "name_en": "Muwafaqiya",
+          "name_ar": "الموفقية",
+          "name_ckb": "موەفەقیە"
+        },
+        {
+          "id": "zubaidiya",
+          "name_en": "Zubaidiya",
+          "name_ar": "الزبيدية",
+          "name_ckb": "زوبەیدیە"
+        }
+      ]
+    },
+    {
+      "id": "qadisiyah",
+      "name_en": "Qadisiyah",
+      "name_ar": "القادسية",
+      "name_ckb": "قادسیە",
+      "cities": [
+        {
+          "id": "diwaniya",
+          "name_en": "Diwaniya Center",
+          "name_ar": "مركز الديوانية",
+          "name_ckb": "ناوەندی دیوانیە"
+        },
+        {
+          "id": "afak",
+          "name_en": "Afak",
+          "name_ar": "عفك",
+          "name_ckb": "عەفەک"
+        },
+        {
+          "id": "shamiya",
+          "name_en": "Shamiya",
+          "name_ar": "الشامية",
+          "name_ckb": "شامیە"
+        },
+        {
+          "id": "hamza",
+          "name_en": "Hamza",
+          "name_ar": "الحمزة",
+          "name_ckb": "حەمزە"
+        },
+        {
+          "id": "daghara",
+          "name_en": "Daghara (Akad)",
+          "name_ar": "الدغارة (اكد)",
+          "name_ckb": "دەغارە (ئەکەد)"
+        },
+        {
+          "id": "budair",
+          "name_en": "Budair",
+          "name_ar": "البدير",
+          "name_ckb": "بودەیر"
+        },
+        {
+          "id": "mahnawiya",
+          "name_en": "Mahnawiya",
+          "name_ar": "المهناوية",
+          "name_ckb": "مەهناویە"
+        },
+        {
+          "id": "shafiiya",
+          "name_en": "Shafiiya",
+          "name_ar": "الشافعية",
+          "name_ckb": "شافعیە"
+        },
+        {
+          "id": "shinaqiya",
+          "name_en": "Shinaqiya",
+          "name_ar": "الشناقية",
+          "name_ckb": "شناقیە"
+        },
+        {
+          "id": "saniya",
+          "name_en": "Saniya",
+          "name_ar": "السنية",
+          "name_ckb": "سەنیە"
+        },
+        {
+          "id": "sudair",
+          "name_en": "Sudair",
+          "name_ar": "السدير",
+          "name_ckb": "سودەیر"
+        },
+        {
+          "id": "ghammas",
+          "name_en": "Ghammas",
+          "name_ar": "غماس",
+          "name_ckb": "غەمماس"
+        },
+        {
+          "id": "sumer",
+          "name_en": "Sumer",
+          "name_ar": "سومر",
+          "name_ckb": "سومەر"
+        }
+      ]
+    },
+    {
+      "id": "maysan",
+      "name_en": "Maysan",
+      "name_ar": "ميسان",
+      "name_ckb": "میسان",
+      "cities": [
+        {
+          "id": "amara",
+          "name_en": "Amara Center",
+          "name_ar": "مركز العمارة",
+          "name_ckb": "ناوەندی عەمارە"
+        },
+        {
+          "id": "ali-al-gharbi",
+          "name_en": "Ali Al-Gharbi",
+          "name_ar": "علي الغربي",
+          "name_ckb": "عەلی غەربی"
+        },
+        {
+          "id": "kahla",
+          "name_en": "Kahla",
+          "name_ar": "الكحلاء",
+          "name_ckb": "کەحلا"
+        },
+        {
+          "id": "maimouna",
+          "name_en": "Maimouna",
+          "name_ar": "الميمونة",
+          "name_ckb": "مەیمونە"
+        },
+        {
+          "id": "mejar-al-kabir",
+          "name_en": "Mejar Al-Kabir",
+          "name_ar": "المجر الكبير",
+          "name_ckb": "مەجەڕ کەبیر"
+        },
+        {
+          "id": "qalat-saleh",
+          "name_en": "Qalat Saleh",
+          "name_ar": "قلعة صالح",
+          "name_ckb": "قەڵعەت ساڵح"
+        },
+        {
+          "id": "kumayt",
+          "name_en": "Kumayt",
+          "name_ar": "كميت",
+          "name_ckb": "کومەیت"
+        }
+      ]
+    },
+    {
+      "id": "thi-qar",
+      "name_en": "Thi Qar",
+      "name_ar": "ذي قار",
+      "name_ckb": "زیقار",
+      "cities": [
+        {
+          "id": "nasiriya",
+          "name_en": "Nasiriya Center",
+          "name_ar": "مركز الناصرية",
+          "name_ckb": "ناوەندی ناسریە"
+        },
+        {
+          "id": "chibayish",
+          "name_en": "Chibayish",
+          "name_ar": "الجبايش",
+          "name_ckb": "چبایش"
+        },
+        {
+          "id": "rifai",
+          "name_en": "Rifai",
+          "name_ar": "الرفاعي",
+          "name_ckb": "ڕیفاعی"
+        },
+        {
+          "id": "shatra",
+          "name_en": "Shatra",
+          "name_ar": "الشطرة",
+          "name_ckb": "شەترە"
+        },
+        {
+          "id": "suq-al-shoyokh",
+          "name_en": "Suq Al-Shoyokh",
+          "name_ar": "سوق الشيوخ",
+          "name_ckb": "سوق شیوخ"
+        },
+        {
+          "id": "dawaya",
+          "name_en": "Dawaya",
+          "name_ar": "الدواية",
+          "name_ckb": "دەوایە"
+        },
+        {
+          "id": "bathaa",
+          "name_en": "Bathaa",
+          "name_ar": "البطحاء",
+          "name_ckb": "بەتحا"
+        },
+        {
+          "id": "fajr",
+          "name_en": "Fajr",
+          "name_ar": "الفجر",
+          "name_ckb": "فەجر"
+        },
+        {
+          "id": "fuhud",
+          "name_en": "Fuhud",
+          "name_ar": "الفهود",
+          "name_ckb": "فوهوود"
+        },
+        {
+          "id": "gharraf",
+          "name_en": "Gharraf",
+          "name_ar": "الغراف",
+          "name_ckb": "غەڕاف"
+        },
+        {
+          "id": "islah",
+          "name_en": "Islah",
+          "name_ar": "الإصلاح",
+          "name_ckb": "ئیسلاح"
+        },
+        {
+          "id": "nasr",
+          "name_en": "Nasr",
+          "name_ar": "النصر",
+          "name_ckb": "نەسر"
+        },
+        {
+          "id": "karmat-bani-saeed",
+          "name_en": "Karmat Bani Saeed",
+          "name_ar": "كرمة بني سعيد",
+          "name_ckb": "کەرمەت بەنی سەعید"
+        },
+        {
+          "id": "qalat-sikar",
+          "name_en": "Qalat Sikar",
+          "name_ar": "قلعة سكر",
+          "name_ckb": "قەڵعەت سکەر"
+        },
+        {
+          "id": "sayyid-dakhil",
+          "name_en": "Sayyid Dakhil",
+          "name_ar": "سيد دخيل",
+          "name_ckb": "سەید دەخیل"
+        }
+      ]
+    },
+    {
+      "id": "muthanna",
+      "name_en": "Muthanna",
+      "name_ar": "المثنى",
+      "name_ckb": "موسەننا",
+      "cities": [
+        {
+          "id": "samawa",
+          "name_en": "Samawa Center",
+          "name_ar": "مركز السماوة",
+          "name_ckb": "ناوەندی سەماوە"
+        },
+        {
+          "id": "rumaitha",
+          "name_en": "Rumaitha",
+          "name_ar": "الرميثة",
+          "name_ckb": "ڕومەیسە"
+        },
+        {
+          "id": "khidhir",
+          "name_en": "Khidhir",
+          "name_ar": "الخضر",
+          "name_ckb": "خدر"
+        },
+        {
+          "id": "salman",
+          "name_en": "Salman",
+          "name_ar": "السلمان",
+          "name_ckb": "سەلمان"
+        },
+        {
+          "id": "warka",
+          "name_en": "Warka",
+          "name_ar": "الوركاء",
+          "name_ckb": "وەرکا"
+        },
+        {
+          "id": "hilal",
+          "name_en": "Hilal",
+          "name_ar": "الهلال",
+          "name_ckb": "هیلال"
+        },
+        {
+          "id": "majd",
+          "name_en": "Majd",
+          "name_ar": "المجد",
+          "name_ckb": "مەجد"
+        },
+        {
+          "id": "najmi",
+          "name_en": "Najmi",
+          "name_ar": "النجمي",
+          "name_ckb": "نەجمی"
+        },
+        {
+          "id": "suwair",
+          "name_en": "Suwair",
+          "name_ar": "السوير",
+          "name_ckb": "سوەیر"
+        }
+      ]
+    }
+  ]
+}

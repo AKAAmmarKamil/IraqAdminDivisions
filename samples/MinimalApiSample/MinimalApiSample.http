@@ -1,0 +1,44 @@
+@host = http://localhost:5080
+
+### Governorates (Arabic by default)
+GET {{host}}/api/iraq-divisions/governorates
+
+### Governorates in Kurdish via Accept-Language
+GET {{host}}/api/iraq-divisions/governorates
+Accept-Language: ku
+
+### One division in English
+GET {{host}}/api/iraq-divisions/IQG02?lang=en
+
+### Children (cascading dropdown)
+GET {{host}}/api/iraq-divisions/IQG02/children?lang=en
+
+### Search
+GET {{host}}/api/iraq-divisions/search?q=%D8%A7%D9%84%D8%A8%D8%B5%D8%B1%D9%87&limit=5
+
+### Search districts only
+GET {{host}}/api/iraq-divisions/search?q=hilla&level=District
+
+### Nearest sub-district to a coordinate
+GET {{host}}/api/iraq-divisions/nearest?lat=30.5&lng=47.8&level=SubDistrict
+
+### Unknown code returns 404
+GET {{host}}/api/iraq-divisions/NOPE
+
+### Create an order (valid sub-district code)
+POST {{host}}/orders
+Content-Type: application/json
+
+{
+  "customer": "Ali",
+  "subDistrictCode": "IQG07Q02N02"
+}
+
+### Create an order with a governorate code (rejected, must be a sub-district)
+POST {{host}}/orders
+Content-Type: application/json
+
+{
+  "customer": "Ali",
+  "subDistrictCode": "IQG07"
+}

@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <RootNamespace>IraqAdminDivisions.Boundaries</RootNamespace>
+    <PackageId>IraqAdminDivisions.Boundaries</PackageId>
+    <Version>1.0.0</Version>
+    <IsPackable>true</IsPackable>
+    <Description>Offline GPS point to Iraqi sub-district, district and governorate lookup for IraqAdminDivisions, using simplified OCHA COD-AB polygons with a grid index and zero-allocation queries.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="../../data/boundaries.json" Link="Data/boundaries.json" LogicalName="IraqAdminDivisions.boundaries.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="IraqAdminDivisions.Boundaries.Tests" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../IraqAdminDivisions/IraqAdminDivisions.csproj" />
+  </ItemGroup>
+
+</Project>

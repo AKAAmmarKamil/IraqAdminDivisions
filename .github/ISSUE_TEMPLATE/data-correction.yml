@@ -1,0 +1,43 @@
+name: Data correction
+description: Report a wrong or missing name, coordinate or code
+labels: [data]
+body:
+  - type: input
+    id: code
+    attributes:
+      label: Division code
+      placeholder: IQG07Q02N02
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: Field
+      options:
+        - Name (Arabic)
+        - Name (English)
+        - Name (Kurdish)
+        - Coordinates
+        - Parent / hierarchy
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current value
+    validations:
+      required: true
+  - type: input
+    id: correct
+    attributes:
+      label: Correct value
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: Official publication, government page or Wikidata item
+    validations:
+      required: true

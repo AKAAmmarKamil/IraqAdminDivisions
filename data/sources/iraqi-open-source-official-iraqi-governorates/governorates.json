@@ -1,0 +1,1498 @@
+{
+  "$schema": "../schema/governorate.schema.json",
+  "version": "1.0.0",
+  "last_updated": "2026-07-11",
+  "country": {
+    "name": {
+      "ar": "جمهورية العراق",
+      "en": "Republic of Iraq",
+      "ku": "کۆماری عێراق"
+    },
+    "iso_alpha2": "IQ",
+    "iso_alpha3": "IRQ",
+    "iso_numeric": "368",
+    "calling_code": "+964",
+    "capital": {
+      "ar": "بغداد",
+      "en": "Baghdad",
+      "ku": "بەغدا"
+    },
+    "currency": {
+      "code": "IQD",
+      "name": {
+        "ar": "دينار عراقي",
+        "en": "Iraqi Dinar",
+        "ku": "دیناری عێراقی"
+      },
+      "symbol": "ع.د"
+    }
+  },
+  "governorates": [
+    {
+      "id": "iq-bg",
+      "iso_3166_2": "IQ-BG",
+      "iso_status": "official",
+      "name": {
+        "ar": "بغداد",
+        "en": "Baghdad",
+        "ku": "بەغدا"
+      },
+      "capital": {
+        "ar": "بغداد",
+        "en": "Baghdad",
+        "ku": "بەغدا"
+      },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 4555,
+      "population": {
+        "count": 8126755,
+        "year": 2020,
+        "source": "COSIT"
+      },
+      "coordinates": {
+        "latitude": 33.3152,
+        "longitude": 44.3661
+      },
+      "phone_code": "1",
+      "postal": {
+        "prefix": "10",
+        "zones": [
+          { "code": "10001", "name": { "ar": "بغداد المركز", "en": "Baghdad Central", "ku": "بەغدا ناوەند" }, "status": "active", "delivery_type": "street" },
+          { "code": "10002", "name": { "ar": "الصالحية", "en": "Al-Salihiya", "ku": "ساڵحیە" }, "status": "active", "delivery_type": "street" },
+          { "code": "10011", "name": { "ar": "الغزالية", "en": "Al-Ghazaliya", "ku": "غەزالیە" }, "status": "active", "delivery_type": "street" },
+          { "code": "10015", "name": { "ar": "اليرموك", "en": "Al-Yarmouk", "ku": "یەرمووک" }, "status": "active", "delivery_type": "street" },
+          { "code": "10020", "name": { "ar": "الثورة (مدينة الصدر)", "en": "Al-Thawra (Sadr City)", "ku": "سەورە (شاری سەدر)" }, "status": "active", "delivery_type": "street" },
+          { "code": "10023", "name": { "ar": "مطار بغداد", "en": "Baghdad Airport", "ku": "فڕۆکەخانەی بەغدا" }, "status": "active", "delivery_type": "street" },
+          { "code": "10031", "name": { "ar": "المنصور", "en": "Al-Mansour", "ku": "مەنسوور" }, "status": "active", "delivery_type": "street" },
+          { "code": "10041", "name": { "ar": "الأعظمية", "en": "Adhamiyah", "ku": "ئەعزەمیە" }, "status": "active", "delivery_type": "street" },
+          { "code": "10051", "name": { "ar": "الكاظمية", "en": "Kadhimiya", "ku": "کازمیە" }, "status": "active", "delivery_type": "street" },
+          { "code": "10061", "name": { "ar": "الكرادة", "en": "Karada", "ku": "کەرادە" }, "status": "active", "delivery_type": "street" },
+          { "code": "10074", "name": { "ar": "الزعفرانية", "en": "Al-Za'faraniya", "ku": "زەعفەرانیە" }, "status": "active", "delivery_type": "street" }
+        ],
+        "address_format": {
+          "template": "{recipient}\n{street}\n{district}, {city}\n{postal_code}\n{governorate}\nIRAQ",
+          "example": {
+            "ar": "أحمد علي\n10 شارع المنصور\nحي المنصور، بغداد\n10001\nمحافظة بغداد\nالعراق",
+            "en": "Ahmed Ali\n10 Al-Mansour Street\nAl-Mansour District, Baghdad\n10001\nBaghdad Province\nIRAQ",
+            "ku": "ئەحمەد عەلی\n10 شەقامی مەنسوور\nگەڕەکی مەنسوور، بەغدا\n10001\nپارێزگای بەغدا\nعێراق"
+          }
+        }
+      },
+      "districts": [
+        {
+          "id": "iq-bg-kh",
+          "name": { "ar": "الكرخ", "en": "Karkh", "ku": "کەرخ" },
+          "center": { "ar": "الكرخ", "en": "Karkh", "ku": "کەرخ" },
+          "is_capital_district": true,
+          "sub_districts": [
+            {
+              "id": "iq-bg-kh-mn",
+              "name": { "ar": "المنصور", "en": "Mansour", "ku": "مەنسوور" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-kh-km",
+              "name": { "ar": "الكاظمية", "en": "Kadhimiya", "ku": "کازمیە" },
+              "neighborhoods": [],
+              "villages": []
+            }
+          ]
+        },
+        {
+          "id": "iq-bg-rs",
+          "name": { "ar": "الرصافة", "en": "Rusafa", "ku": "ڕوسافە" },
+          "center": { "ar": "الرصافة", "en": "Rusafa", "ku": "ڕوسافە" },
+          "is_capital_district": false,
+          "sub_districts": [
+            {
+              "id": "iq-bg-rs-ad",
+              "name": { "ar": "الأعظمية", "en": "Adhamiyah", "ku": "ئەعزەمیە" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-rs-sd",
+              "name": { "ar": "مدينة الصدر", "en": "Sadr City", "ku": "شاری سەدر" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-rs-kr",
+              "name": { "ar": "الكرادة", "en": "Karada", "ku": "کەرادە" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-rs-nn",
+              "name": { "ar": "9 نيسان", "en": "9 Nissan", "ku": "٩ ی نیسان" },
+              "neighborhoods": [],
+              "villages": []
+            }
+          ]
+        },
+        {
+          "id": "iq-bg-rd",
+          "name": { "ar": "الرشيد", "en": "Al-Rashid", "ku": "ڕەشید" },
+          "center": { "ar": "الرشيد", "en": "Al-Rashid", "ku": "ڕەشید" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-bg-ag",
+          "name": { "ar": "أبو غريب", "en": "Abu Ghraib", "ku": "ئەبوو غرێب" },
+          "center": { "ar": "أبو غريب", "en": "Abu Ghraib", "ku": "ئەبوو غرێب" },
+          "is_capital_district": false,
+          "sub_districts": [
+            {
+              "id": "iq-bg-ag-ag",
+              "name": { "ar": "أبو غريب", "en": "Abu Ghraib", "ku": "ئەبوو غرێب" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-ag-nr",
+              "name": { "ar": "النصر والسلام", "en": "Al-Nasr wal-Salam", "ku": "نەسر و سەلام" },
+              "neighborhoods": [],
+              "villages": []
+            }
+          ]
+        },
+        {
+          "id": "iq-bg-md",
+          "name": { "ar": "المدائن", "en": "Al-Mada'in", "ku": "مەدائین" },
+          "center": { "ar": "المدائن", "en": "Al-Mada'in", "ku": "مەدائین" },
+          "is_capital_district": false,
+          "sub_districts": [
+            {
+              "id": "iq-bg-md-md",
+              "name": { "ar": "المدائن", "en": "Al-Mada'in", "ku": "مەدائین" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-md-js",
+              "name": { "ar": "جسر ديالى", "en": "Jisr Diyala", "ku": "جسری دیالە" },
+              "neighborhoods": [],
+              "villages": []
+            }
+          ]
+        },
+        {
+          "id": "iq-bg-mh",
+          "name": { "ar": "المحمودية", "en": "Mahmoudiyah", "ku": "مەحموودیە" },
+          "center": { "ar": "المحمودية", "en": "Mahmoudiyah", "ku": "مەحموودیە" },
+          "is_capital_district": false,
+          "sub_districts": [
+            {
+              "id": "iq-bg-mh-mh",
+              "name": { "ar": "المحمودية", "en": "Mahmoudiyah", "ku": "مەحموودیە" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-mh-lt",
+              "name": { "ar": "اللطيفية", "en": "Latifiya", "ku": "لەتیفیە" },
+              "neighborhoods": [],
+              "villages": []
+            },
+            {
+              "id": "iq-bg-mh-ys",
+              "name": { "ar": "اليوسفية", "en": "Yusufiya", "ku": "یووسفیە" },
+              "neighborhoods": [],
+              "villages": []
+            }
+          ]
+        },
+        {
+          "id": "iq-bg-tj",
+          "name": { "ar": "التاجي", "en": "Taji", "ku": "تاجی" },
+          "center": { "ar": "التاجي", "en": "Taji", "ku": "تاجی" },
+          "is_capital_district": false,
+          "sub_districts": [
+            {
+              "id": "iq-bg-tj-tj",
+              "name": { "ar": "التاجي", "en": "Taji", "ku": "تاجی" },
+              "neighborhoods": [],
+              "villages": []
+            }
+          ]
+        },
+        {
+          "id": "iq-bg-hs",
+          "name": { "ar": "الحسينية", "en": "Husayniyah", "ku": "حوسەینیە" },
+          "center": { "ar": "الحسينية", "en": "Husayniyah", "ku": "حوسەینیە" },
+          "is_capital_district": false,
+          "sub_districts": []
+        }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-bg-lm-01",
+          "name": { "ar": "المتحف العراقي", "en": "Iraq Museum", "ku": "مۆزەخانەی عێراق" },
+          "type": "museum",
+          "category": "heritage",
+          "coordinates": { "latitude": 33.3386, "longitude": 44.3640 },
+          "description": {
+            "ar": "من أهم متاحف الشرق الأوسط، يضم آثاراً تعود لحضارات بلاد الرافدين",
+            "en": "One of the most important museums in the Middle East, housing artifacts from Mesopotamian civilizations",
+            "ku": "یەکێک لە گرنگترین مۆزەخانەکانی ڕۆژھەڵاتی ناوەڕاست، شوێنەوارەکانی شارستانییەکانی مێزۆپۆتامیا تێدایە"
+          }
+        },
+        {
+          "id": "iq-bg-lm-02",
+          "name": { "ar": "المنطقة الخضراء", "en": "Green Zone", "ku": "ناوچەی سەوز" },
+          "type": "monument",
+          "category": "modern",
+          "coordinates": { "latitude": 33.2960, "longitude": 44.3710 },
+          "description": {
+            "ar": "المنطقة الدولية في قلب بغداد، تضم السفارات والمباني الحكومية",
+            "en": "The International Zone in the heart of Baghdad, housing embassies and government buildings",
+            "ku": "ناوچەی نێودەوڵەتی لە دڵی بەغدا، باڵیۆزخانەکان و بینای حکوومەتییەکانی تێدایە"
+          }
+        },
+        {
+          "id": "iq-bg-lm-03",
+          "name": { "ar": "نصب الحرية", "en": "Freedom Monument", "ku": "پەیکەری ئازادی" },
+          "type": "monument",
+          "category": "cultural",
+          "coordinates": { "latitude": 33.3399, "longitude": 44.3878 },
+          "description": {
+            "ar": "نصب تذكاري في ساحة التحرير صممه الفنان جواد سليم عام 1961",
+            "en": "Memorial monument in Tahrir Square designed by artist Jawad Salim in 1961",
+            "ku": "پەیکەری یادەوەری لە مەیدانی تەحریر کە لەلایەن ھونەرمەند جەواد سەلیمەوە لە ١٩٦١ دیزاین کراوە"
+          }
+        },
+        {
+          "id": "iq-bg-lm-04",
+          "name": { "ar": "المدرسة المستنصرية", "en": "Al-Mustansiriya Madrasa", "ku": "مەدرەسەی مستەنسریە" },
+          "type": "archaeological_site",
+          "category": "historical",
+          "unesco_site": false,
+          "coordinates": { "latitude": 33.3412, "longitude": 44.3882 },
+          "description": {
+            "ar": "جامعة تاريخية تأسست عام 1227م في العهد العباسي، من أقدم الجامعات في العالم",
+            "en": "Historic university founded in 1227 during the Abbasid era, one of the oldest universities in the world",
+            "ku": "زانکۆیەکی مێژوویی دامەزراوە لە ١٢٢٧ لە سەردەمی عەبباسیدا، یەکێکە لە کۆنترین زانکۆکانی جیھان"
+          }
+        },
+        {
+          "id": "iq-bg-lm-05",
+          "name": { "ar": "قوس النصر (يدا النصر)", "en": "Victory Arch (Hands of Victory)", "ku": "تاقی سەرکەوتن" },
+          "type": "monument",
+          "category": "modern",
+          "coordinates": { "latitude": 33.3050, "longitude": 44.3770 },
+          "description": {
+            "ar": "نصب تذكاري يتكون من يدين تحملان سيفين متقاطعين",
+            "en": "Memorial monument consisting of two hands holding crossed swords",
+            "ku": "پەیکەری یادەوەری پێکھاتوو لە دوو دەست کە دوو شمشێری خاچەوەکراویان ھەڵگرتووە"
+          }
+        },
+        {
+          "id": "iq-bg-lm-06",
+          "name": { "ar": "إيوان كسرى (طاق كسرى)", "en": "Arch of Ctesiphon (Taq Kasra)", "ku": "تاقی کسرا" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "unesco_site": false,
+          "coordinates": { "latitude": 33.0940, "longitude": 44.5810 },
+          "description": {
+            "ar": "بقايا القصر الساساني في المدائن، يحتوي على أكبر قوس من الطوب في العالم",
+            "en": "Remains of the Sasanian palace in Al-Mada'in, contains the largest brick arch in the world",
+            "ku": "بەجێماوەکانی کۆشکی ساسانی لە مەدائین، گەورەترین تاقی خشتی جیھانی تێدایە"
+          }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار بغداد الدولي", "en": "Baghdad International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی بەغدا" },
+            "iata": "BGW",
+            "icao": "ORBI",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 33.2625, "longitude": 44.2346 }
+          }
+        ],
+        "universities": [
+          {
+            "name": { "ar": "جامعة بغداد", "en": "University of Baghdad", "ku": "زانکۆی بەغدا" },
+            "type": "public_university"
+          },
+          {
+            "name": { "ar": "الجامعة التكنولوجية", "en": "University of Technology", "ku": "زانکۆی تەکنەلۆجی" },
+            "type": "public_university"
+          },
+          {
+            "name": { "ar": "الجامعة المستنصرية", "en": "Al-Mustansiriyah University", "ku": "زانکۆی مستەنسریە" },
+            "type": "public_university"
+          },
+          {
+            "name": { "ar": "جامعة النهرين", "en": "Al-Nahrain University", "ku": "زانکۆی نەھرەین" },
+            "type": "public_university"
+          }
+        ],
+        "hospitals": [
+          {
+            "name": { "ar": "مدينة الطب (مستشفى بغداد التعليمي)", "en": "Medical City (Baghdad Teaching Hospital)", "ku": "شارۆچکەی پزیشکی" },
+            "type": "teaching_hospital"
+          }
+        ],
+        "religious_sites": [
+          {
+            "name": { "ar": "مرقد الإمام الكاظم", "en": "Al-Kadhimiya Mosque", "ku": "بارەگای ئیمام کازم" },
+            "type": "shrine"
+          },
+          {
+            "name": { "ar": "جامع أبو حنيفة النعمان", "en": "Abu Hanifa Mosque", "ku": "مزگەوتی ئەبوو حەنیفە" },
+            "type": "mosque"
+          },
+          {
+            "name": { "ar": "جامع أم القرى", "en": "Umm al-Qura Mosque", "ku": "مزگەوتی ئومەلقورا" },
+            "type": "mosque"
+          }
+        ]
+      }
+    },
+    {
+      "id": "iq-ba",
+      "iso_3166_2": "IQ-BA",
+      "iso_status": "official",
+      "name": {
+        "ar": "البصرة",
+        "en": "Basra",
+        "ku": "بەسرە"
+      },
+      "capital": {
+        "ar": "البصرة",
+        "en": "Basra",
+        "ku": "بەسرە"
+      },
+      "region": "south",
+      "is_kurdistan_region": false,
+      "area_km2": 19070,
+      "population": {
+        "count": 2908491,
+        "year": 2020,
+        "source": "COSIT"
+      },
+      "coordinates": {
+        "latitude": 30.5085,
+        "longitude": 47.7804
+      },
+      "phone_code": "40",
+      "postal": {
+        "prefix": "61",
+        "zones": [
+          { "code": "61001", "name": { "ar": "البصرة المركز", "en": "Basra Central", "ku": "بەسرە ناوەند" }, "status": "active", "delivery_type": "street" },
+          { "code": "61002", "name": { "ar": "الأصمعي", "en": "Al-Asma'i", "ku": "ئەسمەعی" }, "status": "active", "delivery_type": "street" },
+          { "code": "61003", "name": { "ar": "القبلة", "en": "Al-Qibla", "ku": "قیبلە" }, "status": "active", "delivery_type": "street" },
+          { "code": "61005", "name": { "ar": "صفوان", "en": "Safwan", "ku": "سەفوان" }, "status": "active", "delivery_type": "street" },
+          { "code": "61006", "name": { "ar": "الزبير", "en": "Al-Zubair", "ku": "زوبەیر" }, "status": "active", "delivery_type": "street" },
+          { "code": "61007", "name": { "ar": "أبو الخصيب", "en": "Abu Al-Khaseeb", "ku": "ئەبوو ئەلخەسیب" }, "status": "active", "delivery_type": "street" },
+          { "code": "61010", "name": { "ar": "الفاو", "en": "Al-Faw", "ku": "فاو" }, "status": "active", "delivery_type": "street" },
+          { "code": "61011", "name": { "ar": "أم قصر", "en": "Umm Qasr", "ku": "ئومم قەسر" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        {
+          "id": "iq-ba-bs",
+          "name": { "ar": "البصرة", "en": "Basra", "ku": "بەسرە" },
+          "center": { "ar": "البصرة", "en": "Basra", "ku": "بەسرە" },
+          "is_capital_district": true,
+          "sub_districts": [
+            { "id": "iq-ba-bs-bs", "name": { "ar": "البصرة", "en": "Basra", "ku": "بەسرە" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ba-bs-hy", "name": { "ar": "الهارثة", "en": "Al-Hartha", "ku": "ھارسە" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ba-bs-ta", "name": { "ar": "التنومة", "en": "Al-Tannuma", "ku": "تەنوومە" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ba-ak",
+          "name": { "ar": "أبو الخصيب", "en": "Abu Al-Khaseeb", "ku": "ئەبوو ئەلخەسیب" },
+          "center": { "ar": "أبو الخصيب", "en": "Abu Al-Khaseeb", "ku": "ئەبوو ئەلخەسیب" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ba-ak-ak", "name": { "ar": "أبو الخصيب", "en": "Abu Al-Khaseeb", "ku": "ئەبوو ئەلخەسیب" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ba-ak-fw", "name": { "ar": "الفاو", "en": "Al-Faw", "ku": "فاو" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ba-zb",
+          "name": { "ar": "الزبير", "en": "Al-Zubair", "ku": "زوبەیر" },
+          "center": { "ar": "الزبير", "en": "Al-Zubair", "ku": "زوبەیر" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ba-zb-zb", "name": { "ar": "الزبير", "en": "Al-Zubair", "ku": "زوبەیر" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ba-zb-sf", "name": { "ar": "صفوان", "en": "Safwan", "ku": "سەفوان" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ba-zb-uq", "name": { "ar": "أم قصر", "en": "Umm Qasr", "ku": "ئومم قەسر" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ba-qr",
+          "name": { "ar": "القرنة", "en": "Al-Qurna", "ku": "قورنە" },
+          "center": { "ar": "القرنة", "en": "Al-Qurna", "ku": "قورنە" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ba-qr-qr", "name": { "ar": "القرنة", "en": "Al-Qurna", "ku": "قورنە" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ba-md",
+          "name": { "ar": "المدينة", "en": "Al-Midaina", "ku": "مدینە" },
+          "center": { "ar": "المدينة", "en": "Al-Midaina", "ku": "مدینە" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ba-sh",
+          "name": { "ar": "شط العرب", "en": "Shatt al-Arab", "ku": "شەتەلعەرەب" },
+          "center": { "ar": "شط العرب", "en": "Shatt al-Arab", "ku": "شەتەلعەرەب" },
+          "is_capital_district": false,
+          "sub_districts": []
+        }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-ba-lm-01",
+          "name": { "ar": "شط العرب", "en": "Shatt al-Arab", "ku": "شەتەلعەرەب" },
+          "type": "other",
+          "category": "natural",
+          "coordinates": { "latitude": 30.4400, "longitude": 47.9500 },
+          "description": {
+            "ar": "ممر مائي يتكون من التقاء نهري دجلة والفرات",
+            "en": "Waterway formed by the confluence of the Tigris and Euphrates rivers",
+            "ku": "ڕێگای ئاوی دروستبووە لە یەکگرتنی ڕووباری دیجلە و فورات"
+          }
+        },
+        {
+          "id": "iq-ba-lm-02",
+          "name": { "ar": "أهوار جنوب العراق", "en": "Mesopotamian Marshes", "ku": "ئاوگرەکانی باشووری عێراق" },
+          "type": "other",
+          "category": "natural",
+          "unesco_site": true,
+          "coordinates": { "latitude": 31.0000, "longitude": 47.0000 },
+          "description": {
+            "ar": "أهوار بلاد ما بين النهرين، موقع تراث عالمي لليونسكو",
+            "en": "The Mesopotamian Marshes, a UNESCO World Heritage Site",
+            "ku": "ئاوگرەکانی مێزۆپۆتامیا، شوێنی میراتی جیھانیی یونسکۆ"
+          }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار البصرة الدولي", "en": "Basra International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی بەسرە" },
+            "iata": "BSR",
+            "icao": "ORMM",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 30.5491, "longitude": 47.6621 }
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة البصرة", "en": "University of Basra", "ku": "زانکۆی بەسرە" }, "type": "public_university" }
+        ],
+        "ports": [
+          {
+            "name": { "ar": "ميناء أم قصر", "en": "Umm Qasr Port", "ku": "بەندەری ئومم قەسر" },
+            "type": "commercial_port"
+          },
+          {
+            "name": { "ar": "ميناء الفاو الكبير", "en": "Grand Faw Port", "ku": "بەندەری فاوی گەورە" },
+            "type": "commercial_port"
+          }
+        ]
+      }
+    },
+    {
+      "id": "iq-ni",
+      "iso_3166_2": "IQ-NI",
+      "iso_status": "official",
+      "name": { "ar": "نينوى", "en": "Nineveh", "ku": "نەینەوا" },
+      "capital": { "ar": "الموصل", "en": "Mosul", "ku": "مووسڵ" },
+      "region": "north",
+      "is_kurdistan_region": false,
+      "area_km2": 37323,
+      "population": { "count": 3729998, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 36.3350, "longitude": 43.1189 },
+      "phone_code": "60",
+      "postal": {
+        "prefix": "41",
+        "zones": [
+          { "code": "41001", "name": { "ar": "الموصل المركز", "en": "Mosul Central", "ku": "مووسڵ ناوەند" }, "status": "active", "delivery_type": "street" },
+          { "code": "41002", "name": { "ar": "تلعفر", "en": "Tal Afar", "ku": "تەلعەفەر" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        {
+          "id": "iq-ni-ms",
+          "name": { "ar": "الموصل", "en": "Mosul", "ku": "مووسڵ" },
+          "center": { "ar": "الموصل", "en": "Mosul", "ku": "مووسڵ" },
+          "is_capital_district": true,
+          "sub_districts": [
+            { "id": "iq-ni-ms-ms", "name": { "ar": "الموصل", "en": "Mosul", "ku": "مووسڵ" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ni-ms-hm", "name": { "ar": "حمام العليل", "en": "Hammam al-Alil", "ku": "حەمامی عەلیل" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ni-ms-br", "name": { "ar": "برطلة", "en": "Bartella", "ku": "بەرتەلە" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ni-ta",
+          "name": { "ar": "تلعفر", "en": "Tal Afar", "ku": "تەلعەفەر" },
+          "center": { "ar": "تلعفر", "en": "Tal Afar", "ku": "تەلعەفەر" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ni-ta-ta", "name": { "ar": "تلعفر", "en": "Tal Afar", "ku": "تەلعەفەر" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ni-ta-rb", "name": { "ar": "ربيعة", "en": "Rabia", "ku": "ڕەبیعە" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ni-sn",
+          "name": { "ar": "سنجار", "en": "Sinjar", "ku": "شنگال" },
+          "center": { "ar": "سنجار", "en": "Sinjar", "ku": "شنگال" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ni-sn-sn", "name": { "ar": "سنجار", "en": "Sinjar", "ku": "شنگال" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ni-hd",
+          "name": { "ar": "الحمدانية", "en": "Al-Hamdaniya", "ku": "حەمدانیە" },
+          "center": { "ar": "بخديدا (قرقوش)", "en": "Bakhdida (Qaraqosh)", "ku": "بەخدیدا" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ni-hd-bk", "name": { "ar": "بخديدا", "en": "Bakhdida", "ku": "بەخدیدا" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ni-hd-nm", "name": { "ar": "النمرود", "en": "Nimrud", "ku": "نمروود" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ni-ba",
+          "name": { "ar": "بعاج", "en": "Ba'aj", "ku": "بەعاج" },
+          "center": { "ar": "بعاج", "en": "Ba'aj", "ku": "بەعاج" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ni-hb",
+          "name": { "ar": "الحضر", "en": "Al-Hatra", "ku": "حەترا" },
+          "center": { "ar": "الحضر", "en": "Al-Hatra", "ku": "حەترا" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ni-mk",
+          "name": { "ar": "مخمور", "en": "Makhmur", "ku": "مەخموور" },
+          "center": { "ar": "مخمور", "en": "Makhmur", "ku": "مەخموور" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ni-sh",
+          "name": { "ar": "الشيخان", "en": "Al-Shikhan", "ku": "شێخان" },
+          "center": { "ar": "الشيخان", "en": "Al-Shikhan", "ku": "شێخان" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ni-ak",
+          "name": { "ar": "عقرة", "en": "Aqra", "ku": "ئاکرێ" },
+          "center": { "ar": "عقرة", "en": "Aqra", "ku": "ئاکرێ" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ni-tk",
+          "name": { "ar": "تلكيف", "en": "Tilkaif", "ku": "تلکێف" },
+          "center": { "ar": "تلكيف", "en": "Tilkaif", "ku": "تلکێف" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ni-tk-tk", "name": { "ar": "تلكيف", "en": "Tilkaif", "ku": "تلکێف" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ni-tk-al", "name": { "ar": "ألقوش", "en": "Alqosh", "ku": "ئەلقووش" }, "neighborhoods": [], "villages": [] }
+          ]
+        }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-ni-lm-01",
+          "name": { "ar": "آثار نينوى", "en": "Ruins of Nineveh", "ku": "شوێنەوارەکانی نەینەوا" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "coordinates": { "latitude": 36.3597, "longitude": 43.1528 },
+          "description": {
+            "ar": "عاصمة الإمبراطورية الآشورية القديمة",
+            "en": "Capital of the ancient Assyrian Empire",
+            "ku": "پایتەختی ئیمپراتۆریەتی ئاشووری کۆن"
+          }
+        },
+        {
+          "id": "iq-ni-lm-02",
+          "name": { "ar": "الحضر", "en": "Hatra", "ku": "حەترا" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "unesco_site": true,
+          "coordinates": { "latitude": 35.5878, "longitude": 42.7178 },
+          "description": {
+            "ar": "مدينة أثرية ومملكة عربية قديمة، موقع تراث عالمي لليونسكو",
+            "en": "Ancient archaeological city and Arab kingdom, UNESCO World Heritage Site",
+            "ku": "شاری شوێنەواری و شانشینی عەرەبی کۆن، شوێنی میراتی جیھانیی یونسکۆ"
+          }
+        },
+        {
+          "id": "iq-ni-lm-03",
+          "name": { "ar": "جامع النوري الكبير", "en": "Great Mosque of al-Nuri", "ku": "مزگەوتی گەورەی نووری" },
+          "type": "mosque",
+          "category": "historical",
+          "coordinates": { "latitude": 36.3440, "longitude": 43.1369 },
+          "description": {
+            "ar": "مسجد تاريخي مشهور بمنارته الحدباء، أُعيد ترميمه بعد تدميره",
+            "en": "Historic mosque famous for its leaning minaret, rebuilt after destruction",
+            "ku": "مزگەوتی مێژوویی بەناوبانگ بە مەنارەی لاری، دوای لەناوبردنی دووبارە ھاتەوە دروستکردن"
+          }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار الموصل الدولي", "en": "Mosul International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی مووسڵ" },
+            "iata": "OSM",
+            "icao": "ORBM",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 36.3058, "longitude": 43.1474 }
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة الموصل", "en": "University of Mosul", "ku": "زانکۆی مووسڵ" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-ar",
+      "iso_3166_2": "IQ-AR",
+      "iso_status": "official",
+      "name": { "ar": "أربيل", "en": "Erbil", "ku": "ھەولێر" },
+      "capital": { "ar": "أربيل", "en": "Erbil", "ku": "ھەولێر" },
+      "region": "kurdistan",
+      "is_kurdistan_region": true,
+      "area_km2": 15074,
+      "population": { "count": 2009537, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 36.1912, "longitude": 44.0119 },
+      "phone_code": "66",
+      "postal": {
+        "prefix": "44",
+        "zones": [
+          { "code": "44001", "name": { "ar": "أربيل المركز", "en": "Erbil Central", "ku": "ھەولێر ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        {
+          "id": "iq-ar-ar",
+          "name": { "ar": "أربيل", "en": "Erbil", "ku": "ھەولێر" },
+          "center": { "ar": "أربيل", "en": "Erbil", "ku": "ھەولێر" },
+          "is_capital_district": true,
+          "sub_districts": [
+            { "id": "iq-ar-ar-ar", "name": { "ar": "أربيل", "en": "Erbil", "ku": "ھەولێر" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ar-ar-bh", "name": { "ar": "بحركة", "en": "Baharka", "ku": "بەھرکە" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ar-ar-ai", "name": { "ar": "عينكاوا", "en": "Ainkawa", "ku": "عەینکاوە" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ar-sh",
+          "name": { "ar": "شقلاوة", "en": "Shaqlawa", "ku": "شەقڵاوە" },
+          "center": { "ar": "شقلاوة", "en": "Shaqlawa", "ku": "شەقڵاوە" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ar-sh-sh", "name": { "ar": "شقلاوة", "en": "Shaqlawa", "ku": "شەقڵاوە" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ar-sh-hr", "name": { "ar": "حرير", "en": "Harir", "ku": "ھەریر" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ar-mk",
+          "name": { "ar": "مخمور", "en": "Makhmur", "ku": "مەخموور" },
+          "center": { "ar": "مخمور", "en": "Makhmur", "ku": "مەخموور" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ar-ko",
+          "name": { "ar": "كويسنجق", "en": "Koisinjaq", "ku": "کۆیسنجق" },
+          "center": { "ar": "كويسنجق", "en": "Koisinjaq", "ku": "کۆیسنجق" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ar-sr",
+          "name": { "ar": "سوران", "en": "Soran", "ku": "سۆران" },
+          "center": { "ar": "سوران", "en": "Soran", "ku": "سۆران" },
+          "is_capital_district": false,
+          "sub_districts": [
+            { "id": "iq-ar-sr-sr", "name": { "ar": "سوران", "en": "Soran", "ku": "سۆران" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ar-sr-dw", "name": { "ar": "ديانا", "en": "Diana", "ku": "دیانا" }, "neighborhoods": [], "villages": [] },
+            { "id": "iq-ar-sr-rw", "name": { "ar": "رواندوز", "en": "Rawanduz", "ku": "ڕەواندز" }, "neighborhoods": [], "villages": [] }
+          ]
+        },
+        {
+          "id": "iq-ar-mr",
+          "name": { "ar": "ميركسور", "en": "Mergasur", "ku": "مێرگەسۆر" },
+          "center": { "ar": "ميركسور", "en": "Mergasur", "ku": "مێرگەسۆر" },
+          "is_capital_district": false,
+          "sub_districts": []
+        },
+        {
+          "id": "iq-ar-ch",
+          "name": { "ar": "جومان", "en": "Choman", "ku": "چۆمان" },
+          "center": { "ar": "جومان", "en": "Choman", "ku": "چۆمان" },
+          "is_capital_district": false,
+          "sub_districts": []
+        }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-ar-lm-01",
+          "name": { "ar": "قلعة أربيل", "en": "Erbil Citadel", "ku": "قەڵای ھەولێر" },
+          "type": "fort",
+          "category": "heritage",
+          "unesco_site": true,
+          "coordinates": { "latitude": 36.1911, "longitude": 44.0094 },
+          "description": {
+            "ar": "قلعة تاريخية يعود تاريخها لأكثر من 6000 سنة، موقع تراث عالمي لليونسكو",
+            "en": "Historic citadel dating back over 6,000 years, UNESCO World Heritage Site",
+            "ku": "قەڵایەکی مێژوویی مێژووی زیاتر لە ٦٠٠٠ ساڵە، شوێنی میراتی جیھانیی یونسکۆ"
+          }
+        },
+        {
+          "id": "iq-ar-lm-02",
+          "name": { "ar": "منارة جولي", "en": "Mudhafaria Minaret (Choli Minaret)", "ku": "مەنارەی چۆڵی" },
+          "type": "monument",
+          "category": "historical",
+          "coordinates": { "latitude": 36.1890, "longitude": 44.0066 },
+          "description": {
+            "ar": "منارة تاريخية تعود للقرن الثاني عشر",
+            "en": "Historic minaret dating back to the 12th century",
+            "ku": "مەنارەیەکی مێژوویی دەگەڕێتەوە بۆ سەدەی دوازدەھەم"
+          }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار أربيل الدولي", "en": "Erbil International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی ھەولێر" },
+            "iata": "EBL",
+            "icao": "ORER",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 36.2376, "longitude": 43.9632 }
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة صلاح الدين", "en": "Salahaddin University", "ku": "زانکۆی سەلاحەدین" }, "type": "public_university" },
+          { "name": { "ar": "الجامعة الأمريكية في دهوك", "en": "American University of Kurdistan", "ku": "زانکۆی ئەمریکیی کوردستان" }, "type": "private_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-su",
+      "iso_3166_2": "IQ-SU",
+      "iso_status": "official",
+      "name": { "ar": "السليمانية", "en": "Sulaymaniyah", "ku": "سلێمانی" },
+      "capital": { "ar": "السليمانية", "en": "Sulaymaniyah", "ku": "سلێمانی" },
+      "region": "kurdistan",
+      "is_kurdistan_region": true,
+      "area_km2": 17023,
+      "population": { "count": 2120700, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 35.5571, "longitude": 45.4351 },
+      "phone_code": "53",
+      "postal": {
+        "prefix": "46",
+        "zones": [
+          { "code": "46001", "name": { "ar": "السليمانية المركز", "en": "Sulaymaniyah Central", "ku": "سلێمانی ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-su-su", "name": { "ar": "السليمانية", "en": "Sulaymaniyah", "ku": "سلێمانی" }, "center": { "ar": "السليمانية", "en": "Sulaymaniyah", "ku": "سلێمانی" }, "is_capital_district": true, "sub_districts": [
+          { "id": "iq-su-su-su", "name": { "ar": "السليمانية", "en": "Sulaymaniyah", "ku": "سلێمانی" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-su-su-bk", "name": { "ar": "بكرجو", "en": "Bakrajo", "ku": "بەکرەجۆ" }, "neighborhoods": [], "villages": [] }
+        ]},
+        { "id": "iq-su-rn", "name": { "ar": "رانية", "en": "Ranya", "ku": "ڕانیە" }, "center": { "ar": "رانية", "en": "Ranya", "ku": "ڕانیە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-dq", "name": { "ar": "دوكان", "en": "Dokan", "ku": "دووکان" }, "center": { "ar": "دوكان", "en": "Dokan", "ku": "دووکان" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-qa", "name": { "ar": "قلعة دزة", "en": "Qaladiza", "ku": "قەڵادزێ" }, "center": { "ar": "قلعة دزة", "en": "Qaladiza", "ku": "قەڵادزێ" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-pj", "name": { "ar": "بنجوين", "en": "Penjwin", "ku": "پێنجوێن" }, "center": { "ar": "بنجوين", "en": "Penjwin", "ku": "پێنجوێن" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-sw", "name": { "ar": "شاربازير", "en": "Sharbazher", "ku": "شارباژێر" }, "center": { "ar": "شاربازير", "en": "Sharbazher", "ku": "شارباژێر" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-ch", "name": { "ar": "چمچمال", "en": "Chamchamal", "ku": "چەمچەماڵ" }, "center": { "ar": "چمچمال", "en": "Chamchamal", "ku": "چەمچەماڵ" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-dr", "name": { "ar": "دربنديخان", "en": "Darbandikhan", "ku": "دەربەندیخان" }, "center": { "ar": "دربنديخان", "en": "Darbandikhan", "ku": "دەربەندیخان" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-su-ki", "name": { "ar": "كلار", "en": "Kalar", "ku": "کەلار" }, "center": { "ar": "كلار", "en": "Kalar", "ku": "کەلار" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-su-lm-01",
+          "name": { "ar": "متحف السليمانية", "en": "Sulaymaniyah Museum", "ku": "مۆزەخانەی سلێمانی" },
+          "type": "museum",
+          "category": "heritage",
+          "coordinates": { "latitude": 35.5561, "longitude": 45.4370 },
+          "description": { "ar": "ثاني أكبر متحف في العراق", "en": "Second largest museum in Iraq", "ku": "دووەمین مۆزەخانەی گەورە لە عێراق" }
+        },
+        {
+          "id": "iq-su-lm-02",
+          "name": { "ar": "سد دوكان", "en": "Dokan Dam", "ku": "بەستاوی دووکان" },
+          "type": "dam",
+          "category": "modern",
+          "coordinates": { "latitude": 35.9530, "longitude": 44.9550 },
+          "description": { "ar": "أحد أكبر السدود في العراق", "en": "One of the largest dams in Iraq", "ku": "یەکێکە لە گەورەترین بەستاوەکانی عێراق" }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار السليمانية الدولي", "en": "Sulaimaniyah International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی سلێمانی" },
+            "iata": "ISU",
+            "icao": "ORSU",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 35.5617, "longitude": 45.3167 }
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة السليمانية", "en": "University of Sulaymaniyah", "ku": "زانکۆی سلێمانی" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-da",
+      "iso_3166_2": "IQ-DA",
+      "iso_status": "official",
+      "name": { "ar": "دهوك", "en": "Duhok", "ku": "دھۆک" },
+      "capital": { "ar": "دهوك", "en": "Duhok", "ku": "دھۆک" },
+      "region": "kurdistan",
+      "is_kurdistan_region": true,
+      "area_km2": 6553,
+      "population": { "count": 1342900, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 36.8670, "longitude": 42.9500 },
+      "phone_code": "62",
+      "postal": {
+        "prefix": "42",
+        "zones": [
+          { "code": "42001", "name": { "ar": "دهوك المركز", "en": "Duhok Central", "ku": "دھۆک ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-da-du", "name": { "ar": "دهوك", "en": "Duhok", "ku": "دھۆک" }, "center": { "ar": "دهوك", "en": "Duhok", "ku": "دھۆک" }, "is_capital_district": true, "sub_districts": [
+          { "id": "iq-da-du-du", "name": { "ar": "دهوك", "en": "Duhok", "ku": "دھۆک" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-da-du-mn", "name": { "ar": "مانگيش", "en": "Mangesh", "ku": "مانگێش" }, "neighborhoods": [], "villages": [] }
+        ]},
+        { "id": "iq-da-zk", "name": { "ar": "زاخو", "en": "Zakho", "ku": "زاخۆ" }, "center": { "ar": "زاخو", "en": "Zakho", "ku": "زاخۆ" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-da-am", "name": { "ar": "العمادية", "en": "Amadiya", "ku": "ئامێدی" }, "center": { "ar": "العمادية", "en": "Amadiya", "ku": "ئامێدی" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-da-sm", "name": { "ar": "سيميل", "en": "Simele", "ku": "سمێل" }, "center": { "ar": "سيميل", "en": "Simele", "ku": "سمێل" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-da-br", "name": { "ar": "بردرش", "en": "Bardarash", "ku": "بەردەرەش" }, "center": { "ar": "بردرش", "en": "Bardarash", "ku": "بەردەرەش" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-da-sh", "name": { "ar": "شيخان", "en": "Shikhan", "ku": "شێخان" }, "center": { "ar": "شيخان", "en": "Shikhan", "ku": "شێخان" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-da-lm-01",
+          "name": { "ar": "معبد لالش", "en": "Lalish Temple", "ku": "پەرستگای لالش" },
+          "type": "shrine",
+          "category": "religious",
+          "coordinates": { "latitude": 36.7690, "longitude": 43.3050 },
+          "description": { "ar": "أقدس معبد للديانة الإيزيدية في العالم", "en": "The holiest temple of the Yazidi faith in the world", "ku": "پیرۆزترین پەرستگای ئێزیدییەکان لە جیھاندا" }
+        }
+      ],
+      "facilities": {
+        "airports": [],
+        "universities": [
+          { "name": { "ar": "جامعة دهوك", "en": "University of Duhok", "ku": "زانکۆی دھۆک" }, "type": "public_university" }
+        ],
+        "border_crossings": [
+          { "name": { "ar": "معبر إبراهيم الخليل", "en": "Ibrahim Khalil Border Crossing", "ku": "دەروازەی ئیبراھیم خەلیل" }, "type": "international_border" }
+        ]
+      }
+    },
+    {
+      "id": "iq-hl",
+      "iso_3166_2": "IQ-HL",
+      "iso_status": "pending",
+      "name": { "ar": "حلبجة", "en": "Halabja", "ku": "ھەڵەبجە" },
+      "capital": { "ar": "حلبجة", "en": "Halabja", "ku": "ھەڵەبجە" },
+      "region": "kurdistan",
+      "is_kurdistan_region": true,
+      "area_km2": 889,
+      "population": { "count": 118500, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 35.1787, "longitude": 45.9864 },
+      "phone_code": "53",
+      "postal": {
+        "prefix": "46",
+        "zones": [
+          { "code": "46051", "name": { "ar": "حلبجة المركز", "en": "Halabja Central", "ku": "ھەڵەبجە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-hl-hl", "name": { "ar": "حلبجة", "en": "Halabja", "ku": "ھەڵەبجە" }, "center": { "ar": "حلبجة", "en": "Halabja", "ku": "ھەڵەبجە" }, "is_capital_district": true, "sub_districts": [
+          { "id": "iq-hl-hl-hl", "name": { "ar": "حلبجة", "en": "Halabja", "ku": "ھەڵەبجە" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-hl-hl-sr", "name": { "ar": "سيروان", "en": "Sirwan", "ku": "سیروان" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-hl-hl-kh", "name": { "ar": "خورمال", "en": "Khurmal", "ku": "خورماڵ" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-hl-hl-bi", "name": { "ar": "بيارة", "en": "Biara", "ku": "بیارە" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-hl-hl-bm", "name": { "ar": "بامو", "en": "Bamo", "ku": "بامۆ" }, "neighborhoods": [], "villages": [] }
+        ]}
+      ],
+      "landmarks": [
+        {
+          "id": "iq-hl-lm-01",
+          "name": { "ar": "نصب شهداء حلبجة", "en": "Halabja Monument", "ku": "پەیکەری قوربانیانی ھەڵەبجە" },
+          "type": "monument",
+          "category": "historical",
+          "coordinates": { "latitude": 35.1770, "longitude": 45.9830 },
+          "description": {
+            "ar": "نصب تذكاري لضحايا الهجوم الكيمياوي عام 1988",
+            "en": "Memorial monument for the victims of the 1988 chemical attack",
+            "ku": "پەیکەری یادەوەری قوربانیانی ھێرشی کیمیاوی ١٩٨٨"
+          }
+        }
+      ],
+      "facilities": {
+        "airports": [],
+        "universities": [],
+        "border_crossings": [
+          { "name": { "ar": "معبر تويلة", "en": "Tawela Border Crossing", "ku": "دەروازەی تەوێلە" }, "type": "international_border" }
+        ]
+      }
+    },
+    {
+      "id": "iq-ts",
+      "iso_3166_2": "IQ-TS",
+      "iso_status": "official",
+      "name": { "ar": "كركوك", "en": "Kirkuk", "ku": "کەرکووک" },
+      "capital": { "ar": "كركوك", "en": "Kirkuk", "ku": "کەرکووک" },
+      "region": "north",
+      "is_kurdistan_region": false,
+      "area_km2": 9679,
+      "population": { "count": 1597876, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 35.4681, "longitude": 44.3922 },
+      "phone_code": "50",
+      "postal": {
+        "prefix": "36",
+        "zones": [
+          { "code": "36001", "name": { "ar": "كركوك المركز", "en": "Kirkuk Central", "ku": "کەرکووک ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-ts-kr", "name": { "ar": "كركوك", "en": "Kirkuk", "ku": "کەرکووک" }, "center": { "ar": "كركوك", "en": "Kirkuk", "ku": "کەرکووک" }, "is_capital_district": true, "sub_districts": [
+          { "id": "iq-ts-kr-kr", "name": { "ar": "كركوك", "en": "Kirkuk", "ku": "کەرکووک" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-ts-kr-rh", "name": { "ar": "الرحيمية", "en": "Al-Rahimiya", "ku": "ڕەحیمیە" }, "neighborhoods": [], "villages": [] }
+        ]},
+        { "id": "iq-ts-hw", "name": { "ar": "الحويجة", "en": "Hawija", "ku": "ھەویجە" }, "center": { "ar": "الحويجة", "en": "Hawija", "ku": "ھەویجە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-ts-db", "name": { "ar": "داقوق", "en": "Daquq", "ku": "داقووق" }, "center": { "ar": "داقوق", "en": "Daquq", "ku": "داقووق" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-ts-dz", "name": { "ar": "دبس", "en": "Dibis", "ku": "دبس" }, "center": { "ar": "دبس", "en": "Dibis", "ku": "دبس" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-ts-lm-01",
+          "name": { "ar": "قلعة كركوك", "en": "Kirkuk Citadel", "ku": "قەڵای کەرکووک" },
+          "type": "fort",
+          "category": "heritage",
+          "coordinates": { "latitude": 35.4700, "longitude": 44.3900 },
+          "description": { "ar": "قلعة تاريخية تعود لآلاف السنين", "en": "Historic citadel dating back thousands of years", "ku": "قەڵایەکی مێژوویی ھەزاران ساڵ تەمەنی ھەیە" }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار كركوك", "en": "Kirkuk Airport", "ku": "فڕۆکەخانەی کەرکووک" },
+            "iata": "KIK",
+            "icao": "ORKK",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 35.4701, "longitude": 44.3489 }
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة كركوك", "en": "University of Kirkuk", "ku": "زانکۆی کەرکووک" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-di",
+      "iso_3166_2": "IQ-DI",
+      "iso_status": "official",
+      "name": { "ar": "ديالى", "en": "Diyala", "ku": "دیالە" },
+      "capital": { "ar": "بعقوبة", "en": "Baqubah", "ku": "بەعقووبە" },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 17685,
+      "population": { "count": 1637226, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 33.7500, "longitude": 44.6500 },
+      "phone_code": "25",
+      "postal": {
+        "prefix": "32",
+        "zones": [
+          { "code": "32001", "name": { "ar": "بعقوبة المركز", "en": "Baqubah Central", "ku": "بەعقووبە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-di-bq", "name": { "ar": "بعقوبة", "en": "Baqubah", "ku": "بەعقووبە" }, "center": { "ar": "بعقوبة", "en": "Baqubah", "ku": "بەعقووبە" }, "is_capital_district": true, "sub_districts": [
+          { "id": "iq-di-bq-bq", "name": { "ar": "بعقوبة", "en": "Baqubah", "ku": "بەعقووبە" }, "neighborhoods": [], "villages": [] },
+          { "id": "iq-di-bq-bn", "name": { "ar": "بني سعد", "en": "Bani Sa'd", "ku": "بەنی سەعد" }, "neighborhoods": [], "villages": [] }
+        ]},
+        { "id": "iq-di-mr", "name": { "ar": "المقدادية", "en": "Muqdadiyah", "ku": "موقدادیە" }, "center": { "ar": "المقدادية", "en": "Muqdadiyah", "ku": "موقدادیە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-di-kh", "name": { "ar": "خانقين", "en": "Khanaqin", "ku": "خانەقین" }, "center": { "ar": "خانقين", "en": "Khanaqin", "ku": "خانەقین" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-di-bl", "name": { "ar": "بلدروز", "en": "Balad Ruz", "ku": "بەلەدرووز" }, "center": { "ar": "بلدروز", "en": "Balad Ruz", "ku": "بەلەدرووز" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-di-kf", "name": { "ar": "الخالص", "en": "Al-Khalis", "ku": "خالس" }, "center": { "ar": "الخالص", "en": "Al-Khalis", "ku": "خالس" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-di-kf2", "name": { "ar": "كفري", "en": "Kifri", "ku": "کفری" }, "center": { "ar": "كفري", "en": "Kifri", "ku": "کفری" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [],
+      "facilities": {
+        "airports": [],
+        "universities": [
+          { "name": { "ar": "جامعة ديالى", "en": "University of Diyala", "ku": "زانکۆی دیالە" }, "type": "public_university" }
+        ],
+        "border_crossings": [
+          { "name": { "ar": "منفذ المنذرية", "en": "Mundhiriya Border Crossing", "ku": "دەروازەی موندریە" }, "type": "international_border" }
+        ]
+      }
+    },
+    {
+      "id": "iq-sd",
+      "iso_3166_2": "IQ-SD",
+      "iso_status": "official",
+      "name": { "ar": "صلاح الدين", "en": "Saladin", "ku": "سەلاحەدین" },
+      "capital": { "ar": "تكريت", "en": "Tikrit", "ku": "تکریت" },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 24363,
+      "population": { "count": 1595316, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 34.6100, "longitude": 43.6800 },
+      "phone_code": "21",
+      "postal": {
+        "prefix": "34",
+        "zones": [
+          { "code": "34001", "name": { "ar": "تكريت المركز", "en": "Tikrit Central", "ku": "تکریت ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-sd-tk", "name": { "ar": "تكريت", "en": "Tikrit", "ku": "تکریت" }, "center": { "ar": "تكريت", "en": "Tikrit", "ku": "تکریت" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-sd-sm", "name": { "ar": "سامراء", "en": "Samarra", "ku": "سامەرا" }, "center": { "ar": "سامراء", "en": "Samarra", "ku": "سامەرا" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-sd-bl", "name": { "ar": "بلد", "en": "Balad", "ku": "بەلەد" }, "center": { "ar": "بلد", "en": "Balad", "ku": "بەلەد" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-sd-dj", "name": { "ar": "الدجيل", "en": "Al-Dujail", "ku": "دوجەیل" }, "center": { "ar": "الدجيل", "en": "Al-Dujail", "ku": "دوجەیل" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-sd-by", "name": { "ar": "بيجي", "en": "Baiji", "ku": "بەیجی" }, "center": { "ar": "بيجي", "en": "Baiji", "ku": "بەیجی" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-sd-sh", "name": { "ar": "الشرقاط", "en": "Al-Shirqat", "ku": "شرقات" }, "center": { "ar": "الشرقاط", "en": "Al-Shirqat", "ku": "شرقات" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-sd-tr", "name": { "ar": "طوزخورماتو", "en": "Tuz Khurmatu", "ku": "تووز خورماتوو" }, "center": { "ar": "طوزخورماتو", "en": "Tuz Khurmatu", "ku": "تووز خورماتوو" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-sd-lm-01",
+          "name": { "ar": "الملوية (سامراء)", "en": "Great Mosque of Samarra (Malwiya)", "ku": "مەلویە (سامەرا)" },
+          "type": "mosque",
+          "category": "heritage",
+          "unesco_site": true,
+          "coordinates": { "latitude": 34.2059, "longitude": 43.8789 },
+          "description": { "ar": "مسجد تاريخي بمنارته الملوية الشهيرة، موقع تراث عالمي", "en": "Historic mosque with its famous spiral minaret, UNESCO World Heritage Site", "ku": "مزگەوتی مێژوویی بە مەنارەی مەلویەی بەناوبانگ، شوێنی میراتی جیھانی" }
+        },
+        {
+          "id": "iq-sd-lm-02",
+          "name": { "ar": "مدينة آشور الأثرية", "en": "Ashur (Qal'at Sherqat)", "ku": "شاری شوێنەواری ئاشوور" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "unesco_site": true,
+          "coordinates": { "latitude": 35.4570, "longitude": 43.2610 },
+          "description": { "ar": "العاصمة الأولى للإمبراطورية الآشورية، موقع تراث عالمي لليونسكو", "en": "First capital of the Assyrian Empire, UNESCO World Heritage Site", "ku": "یەکەم پایتەختی ئیمپراتۆریەتی ئاشووری، شوێنی میراتی جیھانیی یونسکۆ" }
+        }
+      ],
+      "facilities": {
+        "airports": [],
+        "universities": [
+          { "name": { "ar": "جامعة تكريت", "en": "University of Tikrit", "ku": "زانکۆی تکریت" }, "type": "public_university" },
+          { "name": { "ar": "جامعة سامراء", "en": "University of Samarra", "ku": "زانکۆی سامەرا" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-an",
+      "iso_3166_2": "IQ-AN",
+      "iso_status": "official",
+      "name": { "ar": "الأنبار", "en": "Al-Anbar", "ku": "ئەنبار" },
+      "capital": { "ar": "الرمادي", "en": "Ramadi", "ku": "ڕامادی" },
+      "region": "west",
+      "is_kurdistan_region": false,
+      "area_km2": 138501,
+      "population": { "count": 1771656, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 33.4280, "longitude": 43.2940 },
+      "phone_code": "24",
+      "postal": {
+        "prefix": "31",
+        "zones": [
+          { "code": "31001", "name": { "ar": "الرمادي المركز", "en": "Ramadi Central", "ku": "ڕامادی ناوەند" }, "status": "active", "delivery_type": "street" },
+          { "code": "31002", "name": { "ar": "الفلوجة", "en": "Fallujah", "ku": "فەلووجە" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-an-rm", "name": { "ar": "الرمادي", "en": "Ramadi", "ku": "ڕامادی" }, "center": { "ar": "الرمادي", "en": "Ramadi", "ku": "ڕامادی" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-an-fl", "name": { "ar": "الفلوجة", "en": "Fallujah", "ku": "فەلووجە" }, "center": { "ar": "الفلوجة", "en": "Fallujah", "ku": "فەلووجە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-an-ht", "name": { "ar": "هيت", "en": "Hit", "ku": "ھیت" }, "center": { "ar": "هيت", "en": "Hit", "ku": "ھیت" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-an-hd", "name": { "ar": "حديثة", "en": "Haditha", "ku": "حەدیسە" }, "center": { "ar": "حديثة", "en": "Haditha", "ku": "حەدیسە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-an-qa", "name": { "ar": "القائم", "en": "Al-Qa'im", "ku": "قائم" }, "center": { "ar": "القائم", "en": "Al-Qa'im", "ku": "قائم" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-an-rt", "name": { "ar": "الرطبة", "en": "Rutba", "ku": "ڕوتبە" }, "center": { "ar": "الرطبة", "en": "Rutba", "ku": "ڕوتبە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-an-an", "name": { "ar": "عانة", "en": "Ana", "ku": "ئانە" }, "center": { "ar": "عانة", "en": "Ana", "ku": "ئانە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-an-rw", "name": { "ar": "راوة", "en": "Rawa", "ku": "ڕاوە" }, "center": { "ar": "راوة", "en": "Rawa", "ku": "ڕاوە" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [],
+      "facilities": {
+        "airports": [],
+        "universities": [
+          { "name": { "ar": "جامعة الأنبار", "en": "University of Anbar", "ku": "زانکۆی ئەنبار" }, "type": "public_university" }
+        ],
+        "border_crossings": [
+          { "name": { "ar": "منفذ طريبيل", "en": "Trebil Border Crossing", "ku": "دەروازەی ترێبیل" }, "type": "international_border" },
+          { "name": { "ar": "منفذ القائم", "en": "Al-Qa'im Border Crossing", "ku": "دەروازەی قائم" }, "type": "international_border" }
+        ]
+      }
+    },
+    {
+      "id": "iq-bb",
+      "iso_3166_2": "IQ-BB",
+      "iso_status": "official",
+      "name": { "ar": "بابل", "en": "Babylon", "ku": "بابل" },
+      "capital": { "ar": "الحلة", "en": "Hillah", "ku": "حیللە" },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 5119,
+      "population": { "count": 2065042, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 32.6161, "longitude": 44.0253 },
+      "phone_code": "30",
+      "postal": {
+        "prefix": "51",
+        "zones": [
+          { "code": "51001", "name": { "ar": "الحلة المركز", "en": "Hillah Central", "ku": "حیللە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-bb-hl", "name": { "ar": "الحلة", "en": "Hillah", "ku": "حیللە" }, "center": { "ar": "الحلة", "en": "Hillah", "ku": "حیللە" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-bb-ms", "name": { "ar": "المسيب", "en": "Al-Musayyib", "ku": "موسەییب" }, "center": { "ar": "المسيب", "en": "Al-Musayyib", "ku": "موسەییب" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-bb-mh", "name": { "ar": "المحاويل", "en": "Al-Mahawil", "ku": "مەحاویل" }, "center": { "ar": "المحاويل", "en": "Al-Mahawil", "ku": "مەحاویل" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-bb-hs", "name": { "ar": "الهاشمية", "en": "Al-Hashimiya", "ku": "ھاشمیە" }, "center": { "ar": "الهاشمية", "en": "Al-Hashimiya", "ku": "ھاشمیە" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-bb-lm-01",
+          "name": { "ar": "آثار بابل", "en": "Babylon Ruins", "ku": "شوێنەوارەکانی بابل" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "unesco_site": true,
+          "coordinates": { "latitude": 32.5355, "longitude": 44.4209 },
+          "description": { "ar": "مدينة بابل الأثرية، موقع تراث عالمي لليونسكو منذ 2019", "en": "Ancient city of Babylon, UNESCO World Heritage Site since 2019", "ku": "شاری شوێنەواری بابل، شوێنی میراتی جیھانیی یونسکۆ لە ٢٠١٩ەوە" }
+        }
+      ],
+      "facilities": {
+        "airports": [],
+        "universities": [
+          { "name": { "ar": "جامعة بابل", "en": "University of Babylon", "ku": "زانکۆی بابل" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-ka",
+      "iso_3166_2": "IQ-KA",
+      "iso_status": "official",
+      "name": { "ar": "كربلاء", "en": "Karbala", "ku": "کەربەلا" },
+      "capital": { "ar": "كربلاء", "en": "Karbala", "ku": "کەربەلا" },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 5034,
+      "population": { "count": 1218732, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 32.6160, "longitude": 44.0249 },
+      "phone_code": "32",
+      "postal": {
+        "prefix": "56",
+        "zones": [
+          { "code": "56001", "name": { "ar": "كربلاء المركز", "en": "Karbala Central", "ku": "کەربەلا ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-ka-ka", "name": { "ar": "كربلاء", "en": "Karbala", "ku": "کەربەلا" }, "center": { "ar": "كربلاء", "en": "Karbala", "ku": "کەربەلا" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-ka-hn", "name": { "ar": "الهندية", "en": "Al-Hindiya", "ku": "ھیندیە" }, "center": { "ar": "الهندية", "en": "Al-Hindiya", "ku": "ھیندیە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-ka-an", "name": { "ar": "عين التمر", "en": "Ain al-Tamr", "ku": "عەینوتتەمر" }, "center": { "ar": "عين التمر", "en": "Ain al-Tamr", "ku": "عەینوتتەمر" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-ka-lm-01",
+          "name": { "ar": "مرقد الإمام الحسين", "en": "Imam Husayn Shrine", "ku": "بارەگای ئیمام حوسەین" },
+          "type": "shrine",
+          "category": "religious",
+          "coordinates": { "latitude": 32.6165, "longitude": 44.0234 },
+          "description": { "ar": "مرقد الإمام الحسين بن علي، من أقدس المواقع الإسلامية الشيعية", "en": "Shrine of Imam Husayn ibn Ali, one of the holiest Shia Islamic sites", "ku": "بارەگای ئیمام حوسەین کوڕی عەلی، یەکێکە لە پیرۆزترین شوێنە ئیسلامییە شیعییەکان" }
+        },
+        {
+          "id": "iq-ka-lm-02",
+          "name": { "ar": "مرقد العباس", "en": "Al-Abbas Shrine", "ku": "بارەگای عەبباس" },
+          "type": "shrine",
+          "category": "religious",
+          "coordinates": { "latitude": 32.6136, "longitude": 44.0220 },
+          "description": { "ar": "مرقد أبو الفضل العباس بن علي", "en": "Shrine of Abu al-Fadl al-Abbas ibn Ali", "ku": "بارەگای ئەبولفەزل عەبباس کوڕی عەلی" }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار كربلاء الدولي", "en": "Karbala International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی کەربەلا" },
+            "type": "international",
+            "status": "under_construction"
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة كربلاء", "en": "University of Karbala", "ku": "زانکۆی کەربەلا" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-na",
+      "iso_3166_2": "IQ-NA",
+      "iso_status": "official",
+      "name": { "ar": "النجف", "en": "Najaf", "ku": "نەجەف" },
+      "capital": { "ar": "النجف", "en": "Najaf", "ku": "نەجەف" },
+      "region": "south",
+      "is_kurdistan_region": false,
+      "area_km2": 28824,
+      "population": { "count": 1471592, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 32.0003, "longitude": 44.3355 },
+      "phone_code": "33",
+      "postal": {
+        "prefix": "54",
+        "zones": [
+          { "code": "54001", "name": { "ar": "النجف المركز", "en": "Najaf Central", "ku": "نەجەف ناوەند" }, "status": "active", "delivery_type": "street" },
+          { "code": "54002", "name": { "ar": "الكوفة", "en": "Kufa", "ku": "کووفە" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-na-nj", "name": { "ar": "النجف", "en": "Najaf", "ku": "نەجەف" }, "center": { "ar": "النجف", "en": "Najaf", "ku": "نەجەف" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-na-kf", "name": { "ar": "الكوفة", "en": "Kufa", "ku": "کووفە" }, "center": { "ar": "الكوفة", "en": "Kufa", "ku": "کووفە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-na-mn", "name": { "ar": "المناذرة", "en": "Al-Manathira", "ku": "مەنازرە" }, "center": { "ar": "المناذرة", "en": "Al-Manathira", "ku": "مەنازرە" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-na-lm-01",
+          "name": { "ar": "مرقد الإمام علي", "en": "Imam Ali Shrine", "ku": "بارەگای ئیمام عەلی" },
+          "type": "shrine",
+          "category": "religious",
+          "coordinates": { "latitude": 31.9960, "longitude": 44.3148 },
+          "description": { "ar": "مرقد الإمام علي بن أبي طالب، من أقدس المواقع الشيعية", "en": "Shrine of Imam Ali ibn Abi Talib, one of the holiest Shia sites", "ku": "بارەگای ئیمام عەلی کوڕی ئەبوو تاڵب، یەکێکە لە پیرۆزترین شوێنە شیعییەکان" }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار النجف الأشرف الدولي", "en": "Al Najaf International Airport", "ku": "فڕۆکەخانەی نێودەوڵەتیی نەجەف" },
+            "iata": "NJF",
+            "icao": "ORNI",
+            "type": "international",
+            "status": "operational",
+            "coordinates": { "latitude": 31.9899, "longitude": 44.4043 }
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة الكوفة", "en": "University of Kufa", "ku": "زانکۆی کووفە" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-wa",
+      "iso_3166_2": "IQ-WA",
+      "iso_status": "official",
+      "name": { "ar": "واسط", "en": "Wasit", "ku": "واسط" },
+      "capital": { "ar": "الكوت", "en": "Kut", "ku": "کووت" },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 17153,
+      "population": { "count": 1370800, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 32.4907, "longitude": 45.8310 },
+      "phone_code": "23",
+      "postal": {
+        "prefix": "52",
+        "zones": [
+          { "code": "52001", "name": { "ar": "الكوت المركز", "en": "Kut Central", "ku": "کووت ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-wa-kt", "name": { "ar": "الكوت", "en": "Kut", "ku": "کووت" }, "center": { "ar": "الكوت", "en": "Kut", "ku": "کووت" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-wa-nk", "name": { "ar": "النعمانية", "en": "Al-Nu'maniyah", "ku": "نوعمانیە" }, "center": { "ar": "النعمانية", "en": "Al-Nu'maniyah", "ku": "نوعمانیە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-wa-hy", "name": { "ar": "الحي", "en": "Al-Hayy", "ku": "حەی" }, "center": { "ar": "الحي", "en": "Al-Hayy", "ku": "حەی" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-wa-sw", "name": { "ar": "الصويرة", "en": "Al-Suwaira", "ku": "سوەیرە" }, "center": { "ar": "الصويرة", "en": "Al-Suwaira", "ku": "سوەیرە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-wa-az", "name": { "ar": "العزيزية", "en": "Al-Aziziya", "ku": "عەزیزیە" }, "center": { "ar": "العزيزية", "en": "Al-Aziziya", "ku": "عەزیزیە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-wa-bd", "name": { "ar": "بدرة", "en": "Badra", "ku": "بەدرە" }, "center": { "ar": "بدرة", "en": "Badra", "ku": "بەدرە" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [],
+      "facilities": {
+        "airports": [],
+        "universities": [
+          { "name": { "ar": "جامعة واسط", "en": "University of Wasit", "ku": "زانکۆی واسط" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-ma",
+      "iso_3166_2": "IQ-MA",
+      "iso_status": "official",
+      "name": { "ar": "ميسان", "en": "Maysan", "ku": "مەیسان" },
+      "capital": { "ar": "العمارة", "en": "Amarah", "ku": "عەمارە" },
+      "region": "south",
+      "is_kurdistan_region": false,
+      "area_km2": 16072,
+      "population": { "count": 1074100, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 31.8356, "longitude": 47.1456 },
+      "phone_code": "43",
+      "postal": {
+        "prefix": "62",
+        "zones": [
+          { "code": "62001", "name": { "ar": "العمارة المركز", "en": "Amarah Central", "ku": "عەمارە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-ma-am", "name": { "ar": "العمارة", "en": "Amarah", "ku": "عەمارە" }, "center": { "ar": "العمارة", "en": "Amarah", "ku": "عەمارە" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-ma-al", "name": { "ar": "علي الغربي", "en": "Ali al-Gharbi", "ku": "عەلی ئەلغەربی" }, "center": { "ar": "علي الغربي", "en": "Ali al-Gharbi", "ku": "عەلی ئەلغەربی" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-ma-mr", "name": { "ar": "الميمونة", "en": "Al-Maimouna", "ku": "مەیمونە" }, "center": { "ar": "الميمونة", "en": "Al-Maimouna", "ku": "مەیمونە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-ma-kh", "name": { "ar": "المجر الكبير", "en": "Al-Majar al-Kabir", "ku": "مەجەری کەبیر" }, "center": { "ar": "المجر الكبير", "en": "Al-Majar al-Kabir", "ku": "مەجەری کەبیر" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-ma-qn", "name": { "ar": "قلعة صالح", "en": "Qal'at Salih", "ku": "قەڵای ساڵح" }, "center": { "ar": "قلعة صالح", "en": "Qal'at Salih", "ku": "قەڵای ساڵح" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [],
+      "facilities": { "airports": [], "universities": [
+        { "name": { "ar": "جامعة ميسان", "en": "University of Maysan", "ku": "زانکۆی مەیسان" }, "type": "public_university" }
+      ]}
+    },
+    {
+      "id": "iq-dq",
+      "iso_3166_2": "IQ-DQ",
+      "iso_status": "official",
+      "name": { "ar": "ذي قار", "en": "Dhi Qar", "ku": "زیقار" },
+      "capital": { "ar": "الناصرية", "en": "Nasiriyah", "ku": "ناسریە" },
+      "region": "south",
+      "is_kurdistan_region": false,
+      "area_km2": 12900,
+      "population": { "count": 2095172, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 31.0439, "longitude": 46.2573 },
+      "phone_code": "42",
+      "postal": {
+        "prefix": "64",
+        "zones": [
+          { "code": "64001", "name": { "ar": "الناصرية المركز", "en": "Nasiriyah Central", "ku": "ناسریە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-dq-ns", "name": { "ar": "الناصرية", "en": "Nasiriyah", "ku": "ناسریە" }, "center": { "ar": "الناصرية", "en": "Nasiriyah", "ku": "ناسریە" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-dq-sh", "name": { "ar": "الشطرة", "en": "Al-Shatra", "ku": "شەترە" }, "center": { "ar": "الشطرة", "en": "Al-Shatra", "ku": "شەترە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-dq-rf", "name": { "ar": "الرفاعي", "en": "Al-Rifai", "ku": "ڕیفاعی" }, "center": { "ar": "الرفاعي", "en": "Al-Rifai", "ku": "ڕیفاعی" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-dq-ch", "name": { "ar": "الجبايش", "en": "Al-Chibayish", "ku": "جبایش" }, "center": { "ar": "الجبايش", "en": "Al-Chibayish", "ku": "جبایش" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-dq-sq", "name": { "ar": "سوق الشيوخ", "en": "Suq al-Shuyukh", "ku": "سووقی شویووخ" }, "center": { "ar": "سوق الشيوخ", "en": "Suq al-Shuyukh", "ku": "سووقی شویووخ" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-dq-lm-01",
+          "name": { "ar": "أور (مدينة أور الأثرية)", "en": "Ur", "ku": "ئوور" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "coordinates": { "latitude": 30.9628, "longitude": 46.1031 },
+          "description": { "ar": "مدينة سومرية قديمة، مسقط رأس النبي إبراهيم حسب التقاليد", "en": "Ancient Sumerian city, traditionally the birthplace of Prophet Abraham", "ku": "شاری سومەری کۆن، بەپێی ڕەوایەت شوێنی لەدایکبوونی پێغەمبەر ئیبراھیم" }
+        },
+        {
+          "id": "iq-dq-lm-02",
+          "name": { "ar": "زقورة أور", "en": "Ziggurat of Ur", "ku": "زیگوراتی ئوور" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "coordinates": { "latitude": 30.9628, "longitude": 46.1031 },
+          "description": { "ar": "معبد سومري ضخم يعود للألفية الثالثة قبل الميلاد", "en": "Massive Sumerian temple dating to the 3rd millennium BC", "ku": "پەرستگایەکی سومەری گەورە دەگەڕێتەوە بۆ ھەزارەی سێیەم پێش زاین" }
+        },
+        {
+          "id": "iq-dq-lm-03",
+          "name": { "ar": "أهوار الجبايش", "en": "Chibayish Marshes", "ku": "ئاوگرەکانی جبایش" },
+          "type": "other",
+          "category": "natural",
+          "unesco_site": true,
+          "coordinates": { "latitude": 31.0500, "longitude": 47.0500 },
+          "description": { "ar": "جزء من أهوار العراق المسجلة كموقع تراث عالمي لليونسكو", "en": "Part of the Iraqi marshes registered as UNESCO World Heritage Site", "ku": "بەشێک لە ئاوگرەکانی عێراق کە وەک شوێنی میراتی جیھانیی یونسکۆ تۆمار کراوە" }
+        }
+      ],
+      "facilities": {
+        "airports": [
+          {
+            "name": { "ar": "مطار الناصرية", "en": "Nasiriyah Airport", "ku": "فڕۆکەخانەی ناسریە" },
+            "iata": "XNH",
+            "type": "domestic",
+            "status": "under_construction"
+          }
+        ],
+        "universities": [
+          { "name": { "ar": "جامعة ذي قار", "en": "University of Dhi Qar", "ku": "زانکۆی زیقار" }, "type": "public_university" }
+        ]
+      }
+    },
+    {
+      "id": "iq-mu",
+      "iso_3166_2": "IQ-MU",
+      "iso_status": "official",
+      "name": { "ar": "المثنى", "en": "Muthanna", "ku": "مسەنا" },
+      "capital": { "ar": "السماوة", "en": "Samawah", "ku": "سەماوە" },
+      "region": "south",
+      "is_kurdistan_region": false,
+      "area_km2": 51740,
+      "population": { "count": 818300, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 31.3160, "longitude": 45.2800 },
+      "phone_code": "37",
+      "postal": {
+        "prefix": "66",
+        "zones": [
+          { "code": "66001", "name": { "ar": "السماوة المركز", "en": "Samawah Central", "ku": "سەماوە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-mu-sm", "name": { "ar": "السماوة", "en": "Samawah", "ku": "سەماوە" }, "center": { "ar": "السماوة", "en": "Samawah", "ku": "سەماوە" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-mu-rm", "name": { "ar": "الرميثة", "en": "Al-Rumaitha", "ku": "ڕومەیسە" }, "center": { "ar": "الرميثة", "en": "Al-Rumaitha", "ku": "ڕومەیسە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-mu-kh", "name": { "ar": "الخضر", "en": "Al-Khidhir", "ku": "خزر" }, "center": { "ar": "الخضر", "en": "Al-Khidhir", "ku": "خزر" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-mu-sl", "name": { "ar": "السلمان", "en": "Al-Salman", "ku": "سەلمان" }, "center": { "ar": "السلمان", "en": "Al-Salman", "ku": "سەلمان" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-mu-lm-01",
+          "name": { "ar": "مدينة الوركاء (أوروك)", "en": "Warka (Uruk)", "ku": "وەرکا (ئوروک)" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "coordinates": { "latitude": 31.3228, "longitude": 45.6366 },
+          "description": { "ar": "مدينة سومرية قديمة، مهد الكتابة المسمارية", "en": "Ancient Sumerian city, birthplace of cuneiform writing", "ku": "شاری سومەری کۆن، بنەمای نوسینی میخی" }
+        }
+      ],
+      "facilities": { "airports": [], "universities": [
+        { "name": { "ar": "جامعة المثنى", "en": "University of Muthanna", "ku": "زانکۆی مسەنا" }, "type": "public_university" }
+      ]}
+    },
+    {
+      "id": "iq-qa",
+      "iso_3166_2": "IQ-QA",
+      "iso_status": "official",
+      "name": { "ar": "القادسية", "en": "Qadisiyyah", "ku": "قادسیە" },
+      "capital": { "ar": "الديوانية", "en": "Diwaniyah", "ku": "دیوانیە" },
+      "region": "central",
+      "is_kurdistan_region": false,
+      "area_km2": 8153,
+      "population": { "count": 1296000, "year": 2020, "source": "COSIT" },
+      "coordinates": { "latitude": 31.9920, "longitude": 44.9260 },
+      "phone_code": "36",
+      "postal": {
+        "prefix": "58",
+        "zones": [
+          { "code": "58001", "name": { "ar": "الديوانية المركز", "en": "Diwaniyah Central", "ku": "دیوانیە ناوەند" }, "status": "active", "delivery_type": "street" }
+        ]
+      },
+      "districts": [
+        { "id": "iq-qa-dw", "name": { "ar": "الديوانية", "en": "Diwaniyah", "ku": "دیوانیە" }, "center": { "ar": "الديوانية", "en": "Diwaniyah", "ku": "دیوانیە" }, "is_capital_district": true, "sub_districts": [] },
+        { "id": "iq-qa-sh", "name": { "ar": "الشامية", "en": "Al-Shamiya", "ku": "شامیە" }, "center": { "ar": "الشامية", "en": "Al-Shamiya", "ku": "شامیە" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-qa-af", "name": { "ar": "عفك", "en": "Afak", "ku": "عەفەک" }, "center": { "ar": "عفك", "en": "Afak", "ku": "عەفەک" }, "is_capital_district": false, "sub_districts": [] },
+        { "id": "iq-qa-hm", "name": { "ar": "الحمزة", "en": "Al-Hamza", "ku": "حەمزە" }, "center": { "ar": "الحمزة", "en": "Al-Hamza", "ku": "حەمزە" }, "is_capital_district": false, "sub_districts": [] }
+      ],
+      "landmarks": [
+        {
+          "id": "iq-qa-lm-01",
+          "name": { "ar": "آثار نيبور (نفر)", "en": "Nippur", "ku": "نیپوور" },
+          "type": "archaeological_site",
+          "category": "heritage",
+          "coordinates": { "latitude": 32.1266, "longitude": 45.2314 },
+          "description": { "ar": "مدينة سومرية مقدسة، كانت المركز الديني لبلاد سومر", "en": "Sacred Sumerian city, the religious center of Sumer", "ku": "شاری پیرۆزی سومەری، ناوەندی ئایینی وڵاتی سومەر" }
+        }
+      ],
+      "facilities": { "airports": [], "universities": [
+        { "name": { "ar": "جامعة القادسية", "en": "University of Qadisiyyah", "ku": "زانکۆی قادسیە" }, "type": "public_university" }
+      ]}
+    }
+  ]
+}
