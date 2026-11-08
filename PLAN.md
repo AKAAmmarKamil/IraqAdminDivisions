@@ -94,7 +94,7 @@ against the codes of the previous release.
 2. Library + tests — models, embedded data, search, nearest, FormatAddress, IsValid, validation attribute, xUnit
 3. AspNetCore package + docs + CI + samples — `MapIraqDivisions`, README (EN) + README.ar.md, workflows, sample apps, package metadata
 4. Verify — Release build, all tests, `dotnet pack`, consume the .nupkg from a scratch project
-5. Owner steps (Ammar) — create GitHub repo, add `NUGET_API_KEY` secret, push a `v1.0.0` tag, LinkedIn post
+5. Owner steps (Ammar) — create GitHub repo, NuGet Trusted Publishing policy, push a `v1.0.0` tag, LinkedIn post
 
 ## Known limitations (stated in the README)
 
@@ -119,14 +119,19 @@ Halabja decision (2026-11-08, from sourced research):
 - No ISO 3166-2 code; no newer boundary dataset (OCHA still v01, geoBoundaries 18)
 - Model: governorate IQG19 (project-assigned code, not OCHA); OCHA district IQG06Q05 + its 4 sub-districts move under it with new hierarchical codes IQG19Q01, IQG19Q01N01..N04; old IQG06Q05* rows stay resolvable as deprecated with ReplacedBy; every row carries OchaCode; Shahrazur flagged composition-unconfirmed; ISO null. Declarative file data/overrides/restructures.json so future changes reuse the mechanism. Revisit when OCHA v02 or the gazette text lists the sub-districts
 
-Open after round 2 (from the competitor research):
+2026-11-08 (round 3, done): Halabja IQG19 + deprecated IQG06Q05*; ISO codes from Wikidata P300 (Halabja's IQ-HA
+is Wikidata-only, not in ISO → null); Kurdish 96 Wikidata · 102 dataset (aryzonedev/iraq-cities, calibrated 81%) ·
+214 transliterated · 2 manual. Tests 86/86/85 core (net8/net10/net48) · 43 AspNetCore · 466×2 Boundaries, 0 failures;
+core line coverage 100%. First commit 9c20f23 on main (local only, not pushed).
+
+Open after round 2 (from the competitor research), status after round 3: all three done.
 - Halabja as governorate 19 — needs an authoritative source for which districts/sub-districts moved; then new codes + deprecate the old ones via ReplacedBy
 - Cross-check the 316 transliterated Kurdish names against MIT/CC-BY datasets with human-written Kurdish (karam-fikre/iraqi-data, Iraqi-Open-Source/official-iraqi-governorates, aryzonedev/iraq-cities)
 - ISO 3166-2 codes (IQ-BG, ...) on governorates
 
 Phase 5 checklist (owner):
 1. First commit, then create the GitHub repo AKAAmmarKamil/IraqAdminDivisions and push
-2. nuget.org: create an API key scoped to `IraqAdminDivisions*`; add it as the repo secret `NUGET_API_KEY`
+2. nuget.org: Trusted Publishing policy "IraqAdminDivisions-GitHub" (owner AKA, repo AKAAmmarKamil/IraqAdminDivisions, workflow publish.yml, `IraqAdminDivisions*`) — created 2026-11-08; no secret needed, publish.yml uses NuGet/login@v1. Must be used within 7 days to become permanent
 3. Settings → Actions → Workflow permissions: read/write + allow Actions to create PRs (for refresh-data)
 4. Push tag `v1.0.0` → publish.yml pushes both packages
 5. Pin the repo on GitHub, add it to the CV, LinkedIn post
