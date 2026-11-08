@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/AKAAmmarKamil/IraqAdminDivisions</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>iraq;administrative-divisions;governorates;arabic;kurdish;address;geo;pcode</PackageTags>
-    <PackageLicenseExpression>MIT AND CC-BY-3.0-IGO AND CC0-1.0 AND CC-BY-4.0</PackageLicenseExpression>
+    <PackageLicenseFile>PACKAGE_LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
@@ -21,5 +21,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.403" PrivateAssets="all" />
+    <None Include="$(MSBuildThisFileDirectory)PACKAGE_LICENSE.txt" Pack="true" PackagePath="/" Visible="false" />
   </ItemGroup>
 </Project>
