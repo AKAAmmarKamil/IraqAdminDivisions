@@ -49,6 +49,15 @@ These datasets are compared with our Kurdish names (`reports/kurdish-crosscheck.
 | https://github.com/karam-fikre/iraqi-data (c) 2026 Karam Al-Dulaimi | MIT | `4b80dabf979101e95bef8fe88f71b61301fa46c4` | `data/sources/karam-fikre-iraqi-data/` |
 | https://github.com/Iraqi-Open-Source/official-iraqi-governorates (c) 2025 Iraqi Open Source | MIT | `bd1f03c841fd4cfd35484f51f4765ee525e46a85` | `data/sources/iraqi-open-source-official-iraqi-governorates/` |
 
+## 2024 census units and Wikidata coordinates
+
+Districts and sub-districts that OCHA COD-AB v01 does not list (rows whose `ochaCode` is `null` and `hasBoundary` is
+`false`) were added from the organisation of the 2024 census by the Central Statistical Organization (COSIT). Only the
+facts were taken: that a unit exists, its name and its parent. No population figure or third-party identifier is used.
+Each such row carries its `sources`: a Wikidata item (CC0) when one matches, and the marker `census-2024` for the census
+listing itself. Their coordinates come from Wikidata (CC0) when available, otherwise from the OCHA sub-district they
+were taken from (`carvedFrom`). These rows have no boundary polygon.
+
 ## ISO 3166-2 codes
 
 Governorate ISO 3166-2 codes (`isoCode`, for example `IQ-BG`) are read from Wikidata property P300 (CC0).
@@ -58,4 +67,4 @@ Governorate ISO 3166-2 codes (`isoCode`, for example `IQ-BG`) are read from Wiki
 - Apps and services that show or redistribute the division data: credit OCHA as above (README, About page, or docs).
 - Apps that only store the codes and call the library: the NuGet package carries the notice; a mention is still recommended.
 - AryZone iraq-cities: credit as above wherever the Kurdish names are shown or redistributed.
-- Wikidata: nothing required.
+- Wikidata and the census facts: nothing required.

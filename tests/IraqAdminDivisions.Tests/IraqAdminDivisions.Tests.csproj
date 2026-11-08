@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Snapshots/*.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Snapshots/*.txt;Snapshots/*.tsv" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

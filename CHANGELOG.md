@@ -1,7 +1,28 @@
 # Changelog
 
 Format follows [Keep a Changelog](https://keepachangelog.com/); versions follow [SemVer](https://semver.org/).
-Published codes are never removed (see README, "Code stability").
+From 1.1.0 on, published codes are never removed (see README, "Code stability").
+
+## [1.1.0] - 2026-11-08
+
+The 2024 census. 1.0.1 had no downloads, so this release is the baseline: from 1.1.0 on, a released code is never removed.
+
+### Added
+- 74 districts and 148 sub-districts from the 2024 census (COSIT) that OCHA COD-AB v01 does not list: 19 governorates, 175 districts and 442 sub-districts in all. They have project codes from `51`, `OchaCode = null`, no boundary polygon, and per-row `sources` (a Wikidata item when one matches, `census-2024` for the census listing). See the README, "2024 census", and `reports/census-reconciliation.md`.
+- `Division.HasBoundary`, `CarvedFromCode`, `CarvedFrom` and `CarvedOut`: a unit without a polygon names the OCHA sub-district it was taken from, and `IraqBoundaries.Locate(...).CarvedOut` lists the units a point may belong to instead.
+- `IraqDivisions.IsWithin(code, ancestorCode)` and `IraqDivisions.Descendants(code)`.
+- `divisions.json`: `hasBoundary`, `carvedFrom`, and `sources` on census rows. CSV/SQL exports: `has_boundary`, `carved_from`, `source_urls` columns, appended at the end.
+- Builder: census reconciliation report, `moves[]` with `keepOldCode`, new units without `geometryFrom`, the `51+` code rule, and checks for sources, coordinates, Kurdish names and districts without sub-districts.
+
+### Changed
+- 76 codes from 1.0.1 were renumbered instead of kept as deprecated rows: the Halabja codes `IQG06Q05…` (now `IQG19Q01…`) and 71 sub-districts the census moved to another district of the same governorate. `OchaCode` keeps the OCHA P-code. Full list: `reports/code-changes-1.1.0.md`.
+- A sub-district promoted to a district is that district's centre: it is named `مركز X` / `Markaz X`, `IsDistrictCentre` is true, and its old name is an alias.
+- Halabja has four districts: Halabja, plus Byara, Khurmal and Sirwan from the census.
+- `IraqBoundaries.Locate(lat, lng, AdminLevel.District)` returns the census district when the point's sub-district moved to one.
+- `Search` takes about 14 µs (was 8 µs) with 53% more rows; first load about 1.5 ms.
+
+### Fixed
+- Addresses are built level by level, so they no longer depend on code order.
 
 ## [1.0.1] - 2026-11-08
 

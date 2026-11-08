@@ -25,6 +25,9 @@ public sealed class RepoLayout
     public string SqlServerPath => Path.Combine(Root, "data", "exports", "divisions.sqlserver.sql");
     public string ReportPath => Path.Combine(Root, "reports", "build-report.md");
     public string CrosscheckReportPath => Path.Combine(Root, "reports", "kurdish-crosscheck.md");
+    public string CensusReportPath => Path.Combine(Root, "reports", "census-reconciliation.md");
+    public string CensusChecklistPath => Path.Combine(Root, "data", "local", "census-2024-citypopulation.tsv");
+    public string CensusReconciliationJsonPath => Path.Combine(Root, "data", "local", "census-reconciliation.json");
 
     public static RepoLayout Locate()
     {

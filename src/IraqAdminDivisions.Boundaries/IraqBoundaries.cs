@@ -6,7 +6,7 @@ public static class IraqBoundaries
     private const double MaxLatitude = 90;
     private const double MaxLongitude = 180;
 
-    /// <summary>Finds the sub-district containing a point.</summary>
+    /// <summary>Finds the OCHA sub-district whose polygon contains a point. Units created after OCHA COD-AB v01 have no polygon; when some were taken from the returned sub-district, they are listed in its <see cref="Division.CarvedOut"/>, and the point may belong to one of them instead.</summary>
     /// <param name="latitude">The latitude in degrees, between -90 and 90.</param>
     /// <param name="longitude">The longitude in degrees, between -180 and 180.</param>
     /// <returns>The sub-district, or <c>null</c> when the point is outside Iraq.</returns>
@@ -18,7 +18,7 @@ public static class IraqBoundaries
         return BoundaryIndex.Instance.Locate(latitude, longitude, out _);
     }
 
-    /// <summary>Finds the division at the requested level that contains a point.</summary>
+    /// <summary>Finds the division at the requested level that contains a point, by walking up from the OCHA sub-district polygon that contains it. When that sub-district has <see cref="Division.CarvedOut"/> units under another district, the point may belong to that district instead.</summary>
     /// <param name="latitude">The latitude in degrees, between -90 and 90.</param>
     /// <param name="longitude">The longitude in degrees, between -180 and 180.</param>
     /// <param name="level">The level of the division to return.</param>

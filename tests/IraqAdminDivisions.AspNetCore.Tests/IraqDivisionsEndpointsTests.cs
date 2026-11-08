@@ -69,12 +69,12 @@ public sealed class IraqDivisionsEndpointsTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task DeprecatedCode_ResolvesWithItsReplacement()
+    public async Task CurrentCode_IsNotDeprecatedAndHasNoReplacement()
     {
-        var oldKhurmal = await GetJsonAsync($"{DefaultPrefix}/IQG06Q05N02");
+        var khurmal = await GetJsonAsync($"{DefaultPrefix}/IQG19Q53N51");
 
-        Assert.True(oldKhurmal.GetProperty("isDeprecated").GetBoolean());
-        Assert.Equal("IQG19Q01N02", oldKhurmal.GetProperty("replacedBy").GetString());
+        Assert.False(khurmal.GetProperty("isDeprecated").GetBoolean());
+        Assert.Equal(System.Text.Json.JsonValueKind.Null, khurmal.GetProperty("replacedBy").ValueKind);
     }
 
     [Fact]

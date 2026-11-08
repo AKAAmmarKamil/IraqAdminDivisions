@@ -43,6 +43,47 @@ public static class IraqDivisions
         return division != null && !division.IsDeprecated && (level == null || division.Level == level);
     }
 
+    /// <summary>Tells whether a division is the given ancestor or lies under it, by walking <see cref="Division.Parent"/>. Use it instead of <c>code.StartsWith(ancestorCode)</c> below governorate level: a sub-district that moved to a new district inside its governorate keeps its code, so its code still carries the old district digits.</summary>
+    /// <param name="code">The division code. A deprecated code is checked against its historical parents.</param>
+    /// <param name="ancestorCode">The code of the governorate, district or sub-district to test against.</param>
+    /// <returns><c>true</c> when <paramref name="code"/> equals <paramref name="ancestorCode"/> or one of its parents does; <c>false</c> when either code is unknown.</returns>
+    public static bool IsWithin(string? code, string? ancestorCode)
+    {
+        var ancestor = Find(ancestorCode);
+        if (ancestor == null)
+        {
+            return false;
+        }
+
+        for (var division = Find(code); division != null; division = division.Parent)
+        {
+            if (ReferenceEquals(division, ancestor))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /// <summary>Lists every current division under a division (its children and their children), ordered by code. Use it instead of filtering <see cref="All"/> by code prefix below governorate level; see <see cref="IsWithin"/>.</summary>
+    /// <param name="code">The division code.</param>
+    /// <returns>The descendants; empty for a sub-district.</returns>
+    /// <exception cref="KeyNotFoundException">The code is unknown.</exception>
+    public static IReadOnlyList<Division> Descendants(string code)
+    {
+        var division = Find(code) ?? throw new KeyNotFoundException($"Unknown Iraqi division code '{code}'.");
+        var descendants = new List<Division>();
+        foreach (var child in division.Children)
+        {
+            descendants.Add(child);
+            descendants.AddRange(child.Children);
+        }
+
+        descendants.Sort((first, second) => string.CompareOrdinal(first.Code, second.Code));
+        return descendants.AsReadOnly();
+    }
+
     /// <summary>Formats the address for a code, from the most specific division up to the governorate.</summary>
     /// <param name="code">The division code.</param>
     /// <param name="language">The language to render.</param>

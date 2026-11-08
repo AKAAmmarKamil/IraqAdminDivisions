@@ -1,6 +1,6 @@
 # Build report
 
-Generated: 2026-11-08 07:01:49Z  
+Generated: 2026-11-08 11:59:34Z  
 Status: OK
 
 ## Counts per level
@@ -28,9 +28,9 @@ Kurdish names with an administrative-type prefix stripped: 93
 | Level | Wikidata | Dataset | Transliterated | Manual | With Kurdish name | Total | Coverage |
 |---|---|---|---|---|---|---|---|
 | Governorate | 18 | 0 | 0 | 1 | 19 | 19 | 100.0% |
-| District | 50 | 38 | 14 | 0 | 102 | 102 | 100.0% |
-| SubDistrict | 30 | 65 | 202 | 1 | 298 | 298 | 100.0% |
-| Total | 98 | 103 | 216 | 2 | 419 | 419 | 100.0% |
+| District | 61 | 83 | 30 | 1 | 175 | 175 | 100.0% |
+| SubDistrict | 60 | 64 | 317 | 1 | 442 | 442 | 100.0% |
+| Total | 139 | 147 | 347 | 3 | 636 | 636 | 100.0% |
 
 Transliteration entries ignored because Wikidata or a correction already supplies the name: 0
 
@@ -392,7 +392,7 @@ Douglas-Peucker tolerance: 0.0001 degrees, coordinates rounded to 5 decimals
 | File | Size |
 |---|---|
 | data/boundaries.json | 0.67 MB (702,550 bytes) |
-| data/exports/divisions.geojson | 1.27 MB (1,334,981 bytes) |
+| data/exports/divisions.geojson | 1.27 MB (1,336,841 bytes) |
 
 ### OCHA centre point inside its own simplified polygon
 

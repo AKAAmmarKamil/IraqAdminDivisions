@@ -39,9 +39,9 @@ a) UN OCHA, Common Operational Dataset - Administrative Boundaries (COD-AB)
    (https://data.humdata.org/dataset/cod-ab-irq).
    Licence: Creative Commons Attribution 3.0 IGO (CC BY-IGO 3.0),
    https://creativecommons.org/licenses/by/3.0/igo/
-   The data was modified (corrected, restructured for Halabja Governorate,
-   merged with other names, simplified and re-exported). This is not an
-   official UN or OCHA product.
+   The data was modified (corrected, restructured for Halabja Governorate
+   and the 2024 census, merged with other names, simplified and
+   re-exported). This is not an official UN or OCHA product.
 
 b) Wikidata (https://www.wikidata.org): Kurdish labels and ISO 3166-2 codes.
    Licence: CC0 1.0 (public domain dedication).
@@ -50,6 +50,10 @@ c) aryzonedev/iraq-cities (https://github.com/aryzonedev/iraq-cities):
    some Kurdish names.
    Licence: Creative Commons Attribution 4.0 International (CC BY 4.0),
    https://creativecommons.org/licenses/by/4.0/
+
+d) Iraq 2024 census (Central Statistical Organization, COSIT): the names and
+   hierarchy of the districts and sub-districts OCHA does not list (facts
+   only; no population figures). Their coordinates come from Wikidata (CC0).
 
 Full details, including pinned source versions:
 https://github.com/AKAAmmarKamil/IraqAdminDivisions/blob/main/DATA_LICENSE.md

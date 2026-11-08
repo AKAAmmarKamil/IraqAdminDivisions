@@ -6,7 +6,7 @@ namespace IraqAdminDivisions.Builder.Output;
 
 public sealed class CsvDivisionsWriter
 {
-    private const string Header = "code,level,parent_code,name_ar,name_en,name_ku,lat,lng,area_sqkm,wikidata_id,iso_code,name_ku_source,kurdish_name_dataset,is_district_centre,ocha_code,is_deprecated,replaced_by";
+    private const string Header = "code,level,parent_code,name_ar,name_en,name_ku,lat,lng,area_sqkm,wikidata_id,iso_code,name_ku_source,kurdish_name_dataset,is_district_centre,ocha_code,is_deprecated,replaced_by,has_boundary,carved_from,source_urls";
     private const string LineBreak = "\r\n";
 
     public Task WriteAsync(string path, IReadOnlyList<Division> divisions)
@@ -35,7 +35,10 @@ public sealed class CsvDivisionsWriter
         division.IsDistrictCentre ? "true" : "false",
         Escape(division.OchaCode),
         division.IsDeprecated ? "true" : "false",
-        Escape(division.ReplacedBy));
+        Escape(division.ReplacedBy),
+        division.HasBoundary ? "true" : "false",
+        Escape(division.CarvedFrom),
+        Escape(SourceUrls.Join(division)));
 
     private static string Escape(string? value)
     {

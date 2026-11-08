@@ -1,6 +1,6 @@
 # Kurdish name cross-check
 
-Generated: 2026-11-08 07:01:49Z
+Generated: 2026-11-08 11:59:34Z
 
 ## Policy
 

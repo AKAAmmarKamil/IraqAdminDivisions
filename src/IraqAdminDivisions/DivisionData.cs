@@ -54,6 +54,12 @@ internal sealed class DivisionRecord
 
     [JsonPropertyName("replacedBy")]
     public string? ReplacedBy { get; set; }
+
+    [JsonPropertyName("hasBoundary")]
+    public bool HasBoundary { get; set; } = true;
+
+    [JsonPropertyName("carvedFrom")]
+    public string? CarvedFrom { get; set; }
 }
 
 internal sealed class NameRecord

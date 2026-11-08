@@ -3,7 +3,7 @@ namespace IraqAdminDivisions.Builder.Models;
 public static class BuildSettings
 {
     public const int SchemaVersion = 1;
-    public const string DataVersion = "1.0.0";
+    public const string DataVersion = "1.1.0";
     public const string OchaSourceVersion = "v01";
     public const string UserAgent = "IraqAdminDivisionsBuilder/1.0 (open-source dataset builder; https://github.com/ammarkamil/IraqAdminDivisions)";
     public const string OchaDownloadUrl = "https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c63e1/resource/bde103b3-dc51-4e7b-9fd2-e38fa5600dc6/download/irq_admin_boundaries.xlsx";
@@ -17,19 +17,14 @@ public static class BuildSettings
     public static readonly IReadOnlyList<DataSource> Sources =
     [
         new("OCHA COD-AB Iraq", OchaSourceVersion, "https://data.humdata.org/dataset/cod-ab-irq", "CC BY-IGO"),
-        new("Wikidata", null, "https://www.wikidata.org", "CC0")
+        new("Wikidata", null, "https://www.wikidata.org", "CC0"),
+        new("Iraq 2024 census (COSIT), names and hierarchy of the units only", "2024-11-25", "https://cosit.gov.iq", "Facts; no population figures or third-party database content")
     ];
 
+    /// <summary>Raw OCHA COD-AB v01 rows. The active counts after restructures are these plus every new division in restructures.json (Halabja adds the 19th governorate).</summary>
     public static readonly IReadOnlyDictionary<AdminLevel, int> ExpectedCounts = new Dictionary<AdminLevel, int>
     {
         [AdminLevel.Governorate] = 18,
-        [AdminLevel.District] = 101,
-        [AdminLevel.SubDistrict] = 294
-    };
-
-    public static readonly IReadOnlyDictionary<AdminLevel, int> ExpectedActiveCounts = new Dictionary<AdminLevel, int>
-    {
-        [AdminLevel.Governorate] = 19,
         [AdminLevel.District] = 101,
         [AdminLevel.SubDistrict] = 294
     };

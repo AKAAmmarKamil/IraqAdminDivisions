@@ -1,4 +1,5 @@
 ﻿using IraqAdminDivisions.Builder;
+using IraqAdminDivisions.Builder.Census;
 using IraqAdminDivisions.Builder.Datasets;
 using IraqAdminDivisions.Builder.Geometry;
 using IraqAdminDivisions.Builder.Http;
@@ -51,12 +52,18 @@ await new KurdishCrosscheckWriter().WriteAsync(layout.CrosscheckReportPath, cros
 validationIssues.AddRange(new MergedDivisionValidator().Validate(mergeResult.Divisions));
 validationIssues.AddRange(new IsoCodeValidator().Validate(mergeResult.Divisions));
 var restructureApplier = new RestructureApplier(new RestructuresReader().Read(layout.RestructuresPath));
-validationIssues.AddRange(restructureApplier.FindUnknownCodes(mergeResult.Divisions));
+validationIssues.AddRange(restructureApplier.FindIssues(mergeResult.Divisions));
 if (validationIssues.Count > 0)
     return await FailAsync(mergeResult);
 
 mergeResult = mergeResult with { Divisions = restructureApplier.ApplyToDivisions(mergeResult.Divisions) };
-validationIssues.AddRange(new HierarchyValidator().Validate(mergeResult.Divisions));
+var expectedActiveCounts = BuildSettings.ExpectedCounts.ToDictionary(
+    pair => pair.Key, pair => pair.Value + restructureApplier.AddedActiveCount(pair.Key));
+var reparentedCodes = restructureApplier.Restructures
+    .SelectMany(restructure => restructure.ReparentOrEmpty)
+    .Select(reparent => reparent.Code)
+    .ToHashSet(StringComparer.Ordinal);
+validationIssues.AddRange(new HierarchyValidator().Validate(mergeResult.Divisions, expectedActiveCounts, reparentedCodes));
 if (validationIssues.Count > 0)
     return await FailAsync(mergeResult);
 
@@ -82,6 +89,15 @@ var boundaryReport = new BoundaryReport(
     new FileInfo(layout.GeoJsonPath).Length,
     new BoundaryAnalyzer().Analyze(mergeResult.Divisions, boundaries));
 await reportWriter.WriteAsync(layout.ReportPath, rows, outcomes, mergeResult, validationIssues, generatedAtUtc, boundaryReport, crosscheck, isoCodes);
+
+var censusChecklist = new CensusChecklistReader().Read(layout.CensusChecklistPath);
+if (censusChecklist is not null)
+{
+    var reconciliation = new CensusReconciler(mergeResult.Divisions).Reconcile(censusChecklist);
+    await new CensusReconciliationWriter().WriteAsync(layout.CensusReportPath, reconciliation, generatedAtUtc);
+    await new CensusReconciliationJsonWriter().WriteAsync(layout.CensusReconciliationJsonPath, reconciliation);
+    Console.WriteLine($"Census: reconciled {censusChecklist.Count} checklist rows into {layout.CensusReportPath}");
+}
 
 Console.WriteLine($"Wrote {mergeResult.Divisions.Count} divisions and {boundaries.Count} polygons");
 return 0;

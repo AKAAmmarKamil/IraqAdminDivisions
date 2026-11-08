@@ -487,3 +487,9 @@ $RECYCLE.BIN/
 *.swp
 
 tools/.cache/
+
+# Local, non-redistributable checklists (PLAN-1.1 D1: citypopulation.de is never shipped)
+data/local/
+# Local planning notes (kept out of git)
+PLAN.md
+PLAN-*.md

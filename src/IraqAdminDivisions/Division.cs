@@ -20,8 +20,13 @@ public sealed class Division
         bool isDistrictCentre,
         bool isDeprecated,
         string? replacedByCode,
-        string? ochaCode)
+        string? ochaCode,
+        bool hasBoundary,
+        string? carvedFromCode)
     {
+        HasBoundary = hasBoundary;
+        CarvedFromCode = carvedFromCode;
+        CarvedOut = NoDivisions;
         IsoCode = isoCode;
         KurdishNameDataset = kurdishNameDataset;
         OchaCode = ochaCode;
@@ -87,6 +92,18 @@ public sealed class Division
 
     /// <summary>The code of the division that replaces this one, or <c>null</c>.</summary>
     public string? ReplacedByCode { get; }
+
+    /// <summary>Whether the division has its own polygon in the boundaries package. <c>false</c> for a unit created after OCHA COD-AB v01 (for example from the 2024 census): no open source has its boundary, so its centroid comes from its source or from <see cref="CarvedFrom"/>, and its <see cref="AreaSqKm"/> is 0.</summary>
+    public bool HasBoundary { get; }
+
+    /// <summary>The code of the OCHA sub-district whose territory this unit was taken from, or <c>null</c>. Set only for units without their own boundary.</summary>
+    public string? CarvedFromCode { get; }
+
+    /// <summary>The OCHA sub-district this unit was taken from, or <c>null</c>. See <see cref="CarvedFromCode"/>.</summary>
+    public Division? CarvedFrom { get; internal set; }
+
+    /// <summary>The current sub-districts without a boundary of their own that were taken from this sub-district's territory, ordered by code. A point inside this sub-district's polygon may belong to one of them instead; the boundaries package cannot tell which. Empty for most divisions.</summary>
+    public IReadOnlyList<Division> CarvedOut { get; internal set; }
 
     /// <summary>The parent division, or <c>null</c> for a governorate.</summary>
     public Division? Parent { get; internal set; }

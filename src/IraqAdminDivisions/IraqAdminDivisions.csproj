@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
     <RootNamespace>IraqAdminDivisions</RootNamespace>
     <PackageId>IraqAdminDivisions</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <IsPackable>true</IsPackable>
     <Description>Iraq's governorates, districts and sub-districts in Arabic, English and Kurdish with stable OCHA P-codes, coordinates, tolerant search, hierarchy navigation and address formatting. Offline, no lookup tables.</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

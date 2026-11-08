@@ -40,7 +40,10 @@ public sealed class SqlDivisionsWriter
             is_district_centre {booleanType} NOT NULL,
             ocha_code VARCHAR(16) NULL,
             is_deprecated {booleanType} NOT NULL,
-            replaced_by VARCHAR(16) NULL
+            replaced_by VARCHAR(16) NULL,
+            has_boundary {booleanType} NOT NULL,
+            carved_from VARCHAR(16) NULL,
+            source_urls {textType}(2000) NULL
         );
         """;
 
@@ -56,7 +59,7 @@ public sealed class SqlDivisionsWriter
     }
 
     private string ToInsert(Division division) =>
-        $"INSERT INTO {TableName} (code, level, parent_code, name_ar, name_en, name_ku, lat, lng, area_sqkm, wikidata_id, iso_code, name_ku_source, kurdish_name_dataset, is_district_centre, ocha_code, is_deprecated, replaced_by) VALUES ("
+        $"INSERT INTO {TableName} (code, level, parent_code, name_ar, name_en, name_ku, lat, lng, area_sqkm, wikidata_id, iso_code, name_ku_source, kurdish_name_dataset, is_district_centre, ocha_code, is_deprecated, replaced_by, has_boundary, carved_from, source_urls) VALUES ("
         + string.Join(", ",
             Literal(division.Code),
             Literal(division.Level.ToString()),
@@ -74,7 +77,10 @@ public sealed class SqlDivisionsWriter
             BooleanLiteral(division.IsDistrictCentre),
             Literal(division.OchaCode),
             BooleanLiteral(division.IsDeprecated),
-            Literal(division.ReplacedBy))
+            Literal(division.ReplacedBy),
+            BooleanLiteral(division.HasBoundary),
+            Literal(division.CarvedFrom),
+            TextLiteral(SourceUrls.Join(division)))
         + ");";
 
     private string TextLiteral(string? value) =>

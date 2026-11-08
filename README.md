@@ -105,7 +105,7 @@ Many apps don't want districts and sub-districts. `Localities` is one flat list 
 
 ```csharp
 IraqDivisions.Governorates;                       // first dropdown
-IraqDivisions.Find("IQG07")!.Localities;          // second dropdown: Al-Hashimiya, Al-Qasim, Al-Shomaly, Al-Madhatiya, Al-Hilla, ...
+IraqDivisions.Find("IQG07")!.Localities;          // second dropdown: Al-Hashimiya, Al-Shomaly, Al-Madhatiya, Al-Hilla, ...
 ```
 
 Store the chosen area's code; `FormatAddress`, `GetAddress` and the `StartsWith` filters work the same.
@@ -120,7 +120,7 @@ var governorate = IraqBoundaries.Locate(lat, lng, AdminLevel.Governorate);
 IraqBoundaries.Contains("IQG08", lat, lng);                               // is this point in Baghdad?
 ```
 
-Point-in-polygon over the real OCHA boundaries, not the nearest centre.
+Point-in-polygon over the real OCHA boundaries, not the nearest centre. Units the 2024 census added have no open boundary yet: when some were carved out of the sub-district `Locate` returns, they are listed in its `CarvedOut`, and the point may belong to one of them.
 
 ### 6. ASP.NET Core endpoints
 
@@ -147,13 +147,15 @@ Language: `?lang=ar|en|ku` or the `Accept-Language` header. Every item carries `
 
 | Member | Description |
 |---|---|
-| `IraqDivisions.Governorates` / `All` | The 19 governorates / all 414 current divisions |
+| `IraqDivisions.Governorates` / `All` | The 19 governorates / all 636 current divisions |
 | `IraqDivisions.Find(code)` | Division by code (case-insensitive, trimmed), including deprecated codes, or `null` |
 | `IraqDivisions.IsValid(code, level?)` | Is the code current (not deprecated) and of that level; use it for new input |
 | `IraqDivisions.FormatAddress(code, language)` | Full address in one language |
 | `IraqDivisions.GetAddress(code)` | Full address in Arabic, English and Kurdish |
 | `IraqDivisions.Search(query, limit, level?)` | Tolerant search: ه/ة, ي/ى, أ/إ/ا, tashkeel, "ال", "Al-", one typo |
 | `IraqDivisions.Nearest(lat, lng, level)` | Nearest division centre (approximate; use `Locate` for exact) |
+| `IraqDivisions.IsWithin(code, ancestorCode)` | Is the division the ancestor or under it (walks `Parent`, so it also follows a deprecated code's historical parent) |
+| `IraqDivisions.Descendants(code)` | Every current division under a governorate or district |
 | `Division.Name` / `Address` | `Ar`, `En`, `Ku`, `Get(language)` |
 | `Division.Parent / Children / District / Governorate` | Hierarchy, pre-linked |
 | `Division.Localities` | Flat area list (governorates only) |
@@ -163,6 +165,8 @@ Language: `?lang=ar|en|ku` or the `Accept-Language` header. Every item carries `
 | `Division.IsDistrictCentre` | The "Markaz X" sub-district of a district |
 | `Division.Latitude / Longitude / AreaSqKm / WikidataId / Aliases` | Extra data |
 | `Division.IsDeprecated / ReplacedByCode` | Code lifecycle |
+| `Division.HasBoundary` | Has its own polygon; `false` for the units the 2024 census added |
+| `Division.CarvedFrom` / `CarvedFromCode` / `CarvedOut` | For a unit without a polygon: the OCHA sub-district it was taken from, and the reverse list |
 | `[IraqDivisionCode(level?)]` | DataAnnotations validation |
 | `IraqBoundaries.Locate(lat, lng[, level])` / `Contains(code, lat, lng)` | GPS lookups (Boundaries package) |
 
@@ -173,10 +177,10 @@ Measured with BenchmarkDotNet on .NET 10 (`benchmarks/`). All data is loaded onc
 | Operation | Mean | Allocated |
 |---|---|---|
 | `Find` | 17 ns | 0 B |
-| `FormatAddress` / `GetAddress` | 16 ns | 0 B |
-| `Localities` | 8 ns | 0 B |
-| `Search` (Arabic, English, one typo) | 8 µs | ~250 B (the result list) |
-| First load of all divisions | 0.7 ms | |
+| `FormatAddress` / `GetAddress` | 17 ns | 0 B |
+| `Localities` | 6 ns | 0 B |
+| `Search` (Arabic, English, one typo) | 14 µs | ~250 B (the result list) |
+| First load of all divisions | 1.5 ms | |
 | `IraqBoundaries.Locate` (point in Baghdad / random point) | 56 ns / 35 ns | 0 B |
 | `IraqBoundaries.Locate` (point outside Iraq) | < 1 ns | 0 B |
 | First load of the boundaries (parse + spatial index) | ~25 ms | ~3 MB retained |
@@ -188,17 +192,17 @@ Measured with BenchmarkDotNet on .NET 10 (`benchmarks/`). All data is loaded onc
 | Level | Count | Kurdish from Wikidata | from an open dataset | transliterated | manual |
 |---|---|---|---|---|---|
 | Governorate | 19 | 18 | 0 | 0 | 1 |
-| District | 101 | 49 | 38 | 14 | 0 |
-| Sub-district | 294 | 29 | 64 | 200 | 1 |
-| Total | 414 | 96 | 102 | 214 | 2 |
+| District | 175 | 61 | 83 | 30 | 1 |
+| Sub-district | 442 | 60 | 64 | 317 | 1 |
+| Total | 636 | 139 | 147 | 347 | 3 |
 
-Every division has Arabic, English and Kurdish names; every sub-district has a boundary polygon. Full reports: [reports/build-report.md](reports/build-report.md) and [reports/kurdish-crosscheck.md](reports/kurdish-crosscheck.md).
+Every division has Arabic, English and Kurdish names. The 101 districts and 294 sub-districts from OCHA have boundary polygons; the 74 districts and 148 sub-districts added from the 2024 census do not (see below). Full reports: [reports/build-report.md](reports/build-report.md), [reports/kurdish-crosscheck.md](reports/kurdish-crosscheck.md) and [reports/census-reconciliation.md](reports/census-reconciliation.md).
 
 ### About the Kurdish names
 
 1. **Wikidata** first, when a confident match exists (same name, same parent, close enough).
-2. **Open datasets** next. Three open Iraqi datasets were compared against our 96 Wikidata names; only one, [aryzonedev/iraq-cities](https://github.com/aryzonedev/iraq-cities) (CC BY 4.0), agreed with Wikidata often enough (81% beyond governorate level) to be used. Its names fill 102 rows (`KurdishNameDataset` says which). This is a calibrated source, not proof of native review. [karam-fikre/iraqi-data](https://github.com/karam-fikre/iraqi-data) was used only for comparison because its own documentation calls its Kurdish names unreviewed drafts.
-3. **Transliterated**: the remaining **214 names are AI-assisted transliterations** from the Arabic and English names in Sorani orthography (e.g. ة → ە, "مركز X" → "ناوەندی X"), using the known local Kurdish name where one is well established (e.g. Altun Kupri → پردێ). They read correctly but have **not been reviewed by a native speaker**.
+2. **Open datasets** next. Three open Iraqi datasets were compared against our 96 Wikidata names; only one, [aryzonedev/iraq-cities](https://github.com/aryzonedev/iraq-cities) (CC BY 4.0), agreed with Wikidata often enough (81% beyond governorate level) to be used. Its names fill 102 OCHA rows (`KurdishNameDataset` says which); 45 census districts that were promoted from one of those sub-districts carry the same name. This is a calibrated source, not proof of native review. [karam-fikre/iraqi-data](https://github.com/karam-fikre/iraqi-data) was used only for comparison because its own documentation calls its Kurdish names unreviewed drafts.
+3. **Transliterated**: the remaining **347 names are transliterations** in Sorani orthography (e.g. ة → ە, "مركز X" → "ناوەندی X"). The 214 OCHA rows were transliterated with AI assistance from the Arabic and English names, using the known local Kurdish name where one is well established (e.g. Altun Kupri → پردێ). The 133 census rows were transliterated by rule, from the Kurdish Latin spelling the census list gives in the Kurdistan Region and from the Arabic elsewhere. None has **been reviewed by a native speaker**.
 
 Each name says where it came from, so you decide what to show:
 
@@ -217,11 +221,12 @@ Corrections from Kurdish speakers are the most valuable contribution to this pro
 1. **Base**: OCHA COD-AB Iraq v01: codes, Arabic and English names, centres, areas and boundaries.
 2. **Kurdish**: Wikidata `ckb` labels matched by name + parent + distance; name-only matches are rejected; type prefixes ("پارێزگای", "قەزای") are stripped; anything that is not pure Sorani is rejected.
 3. **Open datasets**: vendored at pinned commits in `data/sources/`, calibrated against Wikidata before use (see [reports/kurdish-crosscheck.md](reports/kurdish-crosscheck.md)).
-4. **Overrides**: [data/overrides/corrections.tsv](data/overrides/corrections.tsv) fixes source errors, each with a reason (e.g. OCHA lists Baladruz district with the Arabic name of Mandali); [data/overrides/kurdish-transliterated.tsv](data/overrides/kurdish-transliterated.tsv) fills the remaining Kurdish names; [data/overrides/restructures.json](data/overrides/restructures.json) applies legal changes OCHA has not caught up with (Halabja). Replaced values stay searchable as aliases.
+4. **Overrides**: [data/overrides/corrections.tsv](data/overrides/corrections.tsv) fixes source errors, each with a reason (e.g. OCHA lists Baladruz district with the Arabic name of Mandali); [data/overrides/kurdish-transliterated.tsv](data/overrides/kurdish-transliterated.tsv) fills the remaining Kurdish names; [data/overrides/restructures.json](data/overrides/restructures.json) applies changes OCHA has not caught up with (Halabja, the 2024 census). Replaced values stay searchable as aliases.
 5. **ISO 3166-2**: governorate codes from Wikidata (P300), validated as unique `IQ-XX`.
-6. **Boundaries**: OCHA polygons simplified with Douglas-Peucker (~11 m tolerance); every division's centre lies inside its own polygon.
-7. **Validation**: the build fails on wrong counts, duplicate or non-hierarchical codes, a deprecated code without a current replacement, missing names in any language, non-Sorani Kurdish, a bad ISO code, or a sub-district without a polygon.
-8. **Not used**: OpenStreetMap (ODbL share-alike) and GADM (no commercial use).
+6. **2024 census**: units the census lists and OCHA does not are added with a project code (see below). Each needs a source; a Wikidata coordinate, when there is one, must fall inside the OCHA sub-district it was carved from.
+7. **Boundaries**: OCHA polygons simplified with Douglas-Peucker (~11 m tolerance); every OCHA division's centre lies inside its own polygon.
+8. **Validation**: the build fails on wrong counts, duplicate or non-hierarchical codes, a project code below 51, a deprecated code without a current replacement, missing names in any language, non-Sorani Kurdish, a bad ISO code, an OCHA sub-district without a polygon, a census unit without a source or with a coordinate outside the sub-district it was carved from, or a district without sub-districts.
+9. **Not used**: OpenStreetMap (ODbL share-alike) and GADM (no commercial use).
 
 A scheduled workflow re-runs the builder monthly and opens a pull request when the sources change.
 
@@ -232,21 +237,38 @@ Halabja became Iraq's 19th governorate by law (passed by the Council of Represen
 | Code | What |
 |---|---|
 | `IQG19` | Halabja Governorate (code assigned by this project; no confirmed ISO 3166-2 code yet) |
-| `IQG19Q01`, `IQG19Q01N01`…`N04` | The OCHA district and its four sub-districts, moved unchanged; `OchaCode` keeps `IQG06Q05…` |
-| `IQG06Q05`, `IQG06Q05N01`…`N04` | Old codes: still resolve through `Find`, flagged `IsDeprecated`, `ReplacedByCode` points to the new code |
+| `IQG19Q01` | Halabja district (OCHA `IQG06Q05`), with Markaz Halabja and Shahrazur |
+| `IQG19Q52`, `IQG19Q53`, `IQG19Q54` | Byara, Khurmal and Sirwan districts from the 2024 census; the OCHA sub-districts Biyara and Khurmal are their centres (`IQG19Q52N51`, `IQG19Q53N51`) |
 
-So `StartsWith("IQG06")` (Sulaymaniyah) no longer returns Halabja rows. Federal sources list the sub-districts as Sirwan, Khurmal, Biyara and Bamo, while OCHA has Biyara, Khurmal, Markaz Halabja and Shahrazur: Sirwan and Bamo have no OCHA geometry yet, and Shahrazur's placement is unconfirmed. This will be revisited when OCHA publishes a new version.
+`OchaCode` keeps the OCHA P-codes (`IQG06Q05…`), so the rows still join with UN data. Bamo, the census's fifth district, is not added yet: no open source places it. The 1.0.1 codes `IQG06Q05…` were removed in 1.1.0 (see "Code stability").
+
+## 2024 census
+
+The 2024 census (COSIT, 2024-11-25) organises Iraq into 19 governorates, about 185 districts and 433 sub-districts, against OCHA's 101 and 294. Version 1.1.0 adds the units OCHA does not list:
+
+- **74 districts and 148 sub-districts**, coded from `51` inside their parent (`IQG11Q52`, `IQG11Q52N51`), with `OchaCode = null` and `HasBoundary = false`. Each one lists its `sources` in `divisions.json` and the exports: a Wikidata item when one matches (111 rows), and the marker `census-2024` for the census listing (111 rows have no other open source yet).
+- **71 OCHA sub-districts moved to the district the census places them in**, with a new code under that district. `OchaCode` keeps the OCHA P-code. A sub-district promoted to a district becomes that district's centre (`مركز X` / `Markaz X`, `IsDistrictCentre`); its old name stays searchable as an alias.
+- **No polygons for the new units.** No open source has their boundaries, and none are invented. `CarvedFrom` names the OCHA sub-district each unit was taken from: the one its Wikidata coordinate falls in, or one of its census district's sub-districts when there is no coordinate. `Locate` returns that OCHA sub-district and lists the new units in `CarvedOut`.
+- **Not added:** units no open source can place (for example Sadr City 1 and 2, Al-Zahur and Al-Zawra in Baghdad, Khabat in Erbil, Al-Hur in Karbala and Bamo in Halabja), and the Kurdistan Region listing of districts that OCHA and the federal lists place in another governorate (Akre, Shekhan and Bardarash under Duhok; Makhmur, Khanaqin, Kifri). These keep their OCHA governorate. Every unit and the reason is in [reports/census-reconciliation.md](reports/census-reconciliation.md).
+
+The census figures come from the census listing by name and hierarchy only; no population figure or third-party database content is shipped.
 
 ## Limitations
 
-- **214 Kurdish names are transliterated** and 102 come from a calibrated open dataset; neither is native-reviewed (see above).
+- **347 Kurdish names are transliterated** and 147 come from a calibrated open dataset; neither is native-reviewed (see above).
+- **Units added from the 2024 census have no boundary** (see above), and the district and governorate polygons in the GeoJSON export are OCHA's: a district's polygon still covers sub-districts the census moved to a new district. `Locate` is unaffected at district and governorate level, because it walks up from the sub-district's current parent.
 - **No neighbourhoods (mahallas)** yet; keep a free-text landmark next to the code.
 - **Halabja's internal composition** follows OCHA, not the federal list (see above). The Sulaymaniyah governorate polygon in the GeoJSON export still includes Halabja; `Locate` is unaffected because it works on sub-districts.
 - Arabic spellings follow OCHA (e.g. "ابي غرق" without hamza); search ignores the difference.
 
 ## Code stability
 
-A published code is never removed or reused. If a division changes, its old code still resolves, is flagged `IsDeprecated` and points to its successor through `ReplacedByCode`, so updating the package never breaks stored data. A snapshot test checks every released code, and package validation blocks breaking API changes.
+From 1.1.0 on, a released code is never removed or reused. If a division changes, its old code still resolves, is flagged `IsDeprecated` and points to its successor through `ReplacedByCode`, so updating the package never breaks stored data. A snapshot test checks every released code, and package validation blocks breaking API changes.
+
+1.1.0 is the baseline: 1.0.1 had no downloads, so 76 of its codes were renumbered instead of being kept as deprecated rows (the Halabja codes `IQG06Q05…` and the 71 sub-districts the census moved). The full list is in [reports/code-changes-1.1.0.md](reports/code-changes-1.1.0.md); `OchaCode` keeps the OCHA P-code of every moved row.
+
+- **A code always starts with its parent's code**, so `StartsWith` works at every level.
+- **Numbering:** codes `01`–`50` inside a parent are OCHA's numbering space. Districts and sub-districts this project adds or moves are numbered from `51` (`IQGxxQ51`, `…N51`), so a project code is visibly not an OCHA code. Governorate `IQG19` (Halabja) is the only project-assigned governorate code.
 
 ## Quality
 
@@ -261,15 +283,15 @@ A published code is never removed or reused. If a division changes, its old code
 | [data/exports/divisions.csv](data/exports/divisions.csv) | CSV (UTF-8 with BOM, opens in Excel) |
 | [data/exports/divisions.sql](data/exports/divisions.sql) | SQL (PostgreSQL / generic) |
 | [data/exports/divisions.sqlserver.sql](data/exports/divisions.sqlserver.sql) | SQL Server (`NVARCHAR`, `N'...'`) |
-| [data/exports/divisions.geojson](data/exports/divisions.geojson) | GeoJSON with boundaries, all levels |
+| [data/exports/divisions.geojson](data/exports/divisions.geojson) | GeoJSON with boundaries, all levels (OCHA units only; units without a boundary are left out) |
 
 ## Contributing
 
-Found a wrong or missing name, especially a Kurdish one? Open a [data correction issue](../../issues/new?template=data-correction.yml) or a PR to the files in `data/overrides/` with a source. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Found a wrong or missing name, especially a Kurdish one? Open a [data correction issue](https://github.com/AKAAmmarKamil/IraqAdminDivisions/issues/new?template=data-correction.yml) or a PR to the files in `data/overrides/` with a source. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Attribution
 
-Administrative divisions and boundaries: UN OCHA, Common Operational Dataset - Administrative Boundaries (COD-AB) Iraq, via the Humanitarian Data Exchange, licensed under [CC BY-IGO 3.0](https://creativecommons.org/licenses/by/3.0/igo/). The data was modified (corrected, restructured for Halabja, merged with Wikidata labels, dataset names and transliterations, simplified and re-exported). This is not an official UN or OCHA product. Kurdish names: Wikidata (CC0), [aryzonedev/iraq-cities](https://github.com/aryzonedev/iraq-cities) (CC BY 4.0) and this project. See [DATA_LICENSE.md](DATA_LICENSE.md).
+Administrative divisions and boundaries: UN OCHA, Common Operational Dataset - Administrative Boundaries (COD-AB) Iraq, via the Humanitarian Data Exchange, licensed under [CC BY-IGO 3.0](https://creativecommons.org/licenses/by/3.0/igo/). The data was modified (corrected, restructured for Halabja and the 2024 census, merged with Wikidata labels, dataset names and transliterations, simplified and re-exported). This is not an official UN or OCHA product. Units added from the 2024 census (COSIT) use the census names and hierarchy only. Kurdish names: Wikidata (CC0), [aryzonedev/iraq-cities](https://github.com/aryzonedev/iraq-cities) (CC BY 4.0) and this project. See [DATA_LICENSE.md](DATA_LICENSE.md).
 
 ## License
 

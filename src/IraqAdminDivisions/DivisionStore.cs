@@ -30,9 +30,11 @@ internal sealed class DivisionStore
 
     public Division? Find(string code) => _byCode.TryGetValue(code, out var division) ? division : null;
 
-    public static DivisionStore Load()
+    public static DivisionStore Load() => Load(ReadFile());
+
+    internal static DivisionStore Load(DivisionFile file)
     {
-        var records = ReadFile().Divisions;
+        var records = file.Divisions;
         records.Sort((first, second) => string.CompareOrdinal(first.Code, second.Code));
 
         var divisions = new Division[records.Count];
@@ -68,6 +70,19 @@ internal sealed class DivisionStore
             siblings.Add(divisions[i]);
         }
 
+        // A sub-district moved to a new district keeps its code, so a parent can sort after its child: build addresses level by level.
+        for (var level = AdminLevel.Governorate; level <= AdminLevel.SubDistrict; level++)
+        {
+            for (var i = 0; i < divisions.Length; i++)
+            {
+                if (divisions[i].Level == level)
+                {
+                    LinkAncestors(divisions[i]);
+                    divisions[i].Address = BuildAddress(divisions[i]);
+                }
+            }
+        }
+
         var active = new List<Division>(divisions.Length);
         var governorates = new List<Division>();
         var searchEntries = new List<SearchEntry>(divisions.Length);
@@ -79,8 +94,6 @@ internal sealed class DivisionStore
                 division.Children = children.AsReadOnly();
             }
 
-            LinkAncestors(division);
-            division.Address = BuildAddress(division);
             if (division.IsDeprecated)
             {
                 continue;
@@ -99,7 +112,41 @@ internal sealed class DivisionStore
             governorate.Localities = BuildLocalities(governorate);
         }
 
+        LinkCarvedUnits(divisions, byCode);
+
         return new DivisionStore(active.AsReadOnly(), governorates.AsReadOnly(), byCode, searchEntries.ToArray());
+    }
+
+    private static void LinkCarvedUnits(Division[] divisions, Dictionary<string, Division> byCode)
+    {
+        var carvedOut = new Dictionary<string, List<Division>>(StringComparer.OrdinalIgnoreCase);
+        foreach (var division in divisions)
+        {
+            if (division.CarvedFromCode == null)
+            {
+                continue;
+            }
+
+            var source = byCode[division.CarvedFromCode];
+            division.CarvedFrom = source;
+            if (division.IsDeprecated || division.Level != AdminLevel.SubDistrict)
+            {
+                continue;
+            }
+
+            if (!carvedOut.TryGetValue(source.Code, out var units))
+            {
+                units = new List<Division>();
+                carvedOut[source.Code] = units;
+            }
+
+            units.Add(division);
+        }
+
+        foreach (var pair in carvedOut)
+        {
+            byCode[pair.Key].CarvedOut = pair.Value.AsReadOnly();
+        }
     }
 
     private static DivisionFile ReadFile()
@@ -125,7 +172,9 @@ internal sealed class DivisionStore
         record.IsDistrictCentre,
         record.IsDeprecated,
         record.ReplacedBy,
-        record.OchaCode);
+        record.OchaCode,
+        record.HasBoundary,
+        record.CarvedFrom);
 
     internal static AdminLevel ParseLevel(string level) =>
         Enum.TryParse<AdminLevel>(level, out var parsed)

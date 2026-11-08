@@ -3,11 +3,12 @@ namespace IraqAdminDivisions.Tests;
 public class DataIntegrityTests
 {
     [Fact]
-    public void Counts_MatchOchaPlusTheHalabjaGovernorate()
+    public void Counts_MatchOchaPlusTheHalabjaGovernorate_PlusProjectAddedUnits()
     {
         Assert.Equal(19, IraqDivisions.All.Count(d => d.Level == AdminLevel.Governorate));
-        Assert.Equal(101, IraqDivisions.All.Count(d => d.Level == AdminLevel.District));
-        Assert.Equal(294, IraqDivisions.All.Count(d => d.Level == AdminLevel.SubDistrict));
+        Assert.Equal(101, IraqDivisions.All.Count(d => d.Level == AdminLevel.District && d.OchaCode != null));
+        Assert.Equal(294, IraqDivisions.All.Count(d => d.Level == AdminLevel.SubDistrict && d.OchaCode != null));
+        Assert.All(IraqDivisions.All.Where(d => d.OchaCode == null && d.Level != AdminLevel.Governorate), d => Assert.False(d.HasBoundary, d.Code));
         Assert.Equal(19, IraqDivisions.Governorates.Count);
     }
 
@@ -73,9 +74,12 @@ public class DataIntegrityTests
     [Fact]
     public void ReleasedCodes_StillResolve()
     {
-        var path = Path.Combine(AppContext.BaseDirectory, "Snapshots", "released-codes-1.0.0.txt");
-        var releasedCodes = File.ReadAllLines(path).Where(line => line.Length > 0).ToList();
+        // One snapshot per release from 1.1.0 on (1.0.1 had no downloads, so 1.1.0 is the baseline). Add the new
+        // release's codes before tagging it; a code in any snapshot must keep resolving.
+        var snapshots = Directory.GetFiles(Path.Combine(AppContext.BaseDirectory, "Snapshots"), "released-codes-*.txt");
+        var releasedCodes = snapshots.SelectMany(File.ReadAllLines).Where(line => line.Length > 0).Distinct().ToList();
 
+        Assert.NotEmpty(snapshots);
         Assert.NotEmpty(releasedCodes);
         Assert.All(releasedCodes, code => Assert.NotNull(IraqDivisions.Find(code)));
     }

@@ -158,7 +158,7 @@ public class NewMembersTests
     [Theory]
     [InlineData("مركزالناصرية", "IQG17Q04N02")]
     [InlineData("مركز الناصرية", "IQG17Q04N02")]
-    [InlineData("مندلي", "IQG10Q03N01")]
+    [InlineData("مندلي", "IQG10Q52N51")]
     [InlineData("مندلي", "IQG10Q03")]
     public void Search_ResolvesNamesAndAliasesThatCameFromCorrections(string query, string expectedCode)
     {

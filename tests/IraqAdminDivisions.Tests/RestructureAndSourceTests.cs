@@ -7,9 +7,10 @@ public class RestructureAndSourceTests
 {
     private const string HalabjaGovernorateCode = "IQG19";
     private const string HalabjaDistrictCode = "IQG19Q01";
-    private const string KhurmalCode = "IQG19Q01N02";
-    private const string OldHalabjaDistrictCode = "IQG06Q05";
-    private const string OldKhurmalCode = "IQG06Q05N02";
+    private const string KhurmalDistrictCode = "IQG19Q53";
+    private const string KhurmalCode = "IQG19Q53N51";
+    private const string OchaHalabjaDistrictCode = "IQG06Q05";
+    private const string OchaKhurmalCode = "IQG06Q05N02";
     private const string SulaymaniyahCode = "IQG06";
     private const string BaghdadCode = "IQG08";
     private static readonly Regex IsoCodePattern = new Regex("^IQ-[A-Z]{2}$");
@@ -27,66 +28,43 @@ public class RestructureAndSourceTests
         Assert.Null(halabja.IsoCode);
         Assert.Null(halabja.OchaCode);
         Assert.Equal(KurdishNameSource.Manual, halabja.KurdishNameSource);
-        Assert.Equal(HalabjaDistrictCode, Assert.Single(halabja.Children).Code);
+        Assert.Contains(halabja.Children, child => child.Code == HalabjaDistrictCode);
+        Assert.All(halabja.Children, child => Assert.StartsWith(HalabjaGovernorateCode, child.Code, StringComparison.Ordinal));
     }
 
     [Fact]
-    public void MovedSubDistrict_HasTheNewParentChainAndKeepsItsOchaCode()
+    public void MovedSubDistrict_HasACodeUnderItsNewDistrictAndKeepsItsOchaCode()
     {
         var khurmal = IraqDivisions.Find(KhurmalCode)!;
 
         Assert.False(khurmal.IsDeprecated);
-        Assert.Equal(HalabjaDistrictCode, khurmal.District!.Code);
+        Assert.Equal(KhurmalDistrictCode, khurmal.District!.Code);
+        Assert.StartsWith(KhurmalDistrictCode, khurmal.Code, StringComparison.Ordinal);
         Assert.Equal(HalabjaGovernorateCode, khurmal.Governorate.Code);
-        Assert.Equal(OldKhurmalCode, khurmal.OchaCode);
+        Assert.Equal(OchaKhurmalCode, khurmal.OchaCode);
+        Assert.True(khurmal.IsDistrictCentre);
+        Assert.Contains("خورمال", khurmal.Aliases);
         Assert.EndsWith(khurmal.Governorate.Name.En, khurmal.Address.En);
         Assert.True(IraqDivisions.IsValid(KhurmalCode, AdminLevel.SubDistrict));
     }
 
     [Fact]
-    public void OldCode_StillResolvesAsDeprecatedAndPointsToItsReplacement()
+    public void OchaCodesOfMovedRows_AreNotCodesOfTheirOwn()
     {
-        var oldKhurmal = IraqDivisions.Find(OldKhurmalCode)!;
-
-        Assert.True(oldKhurmal.IsDeprecated);
-        Assert.Equal(KhurmalCode, oldKhurmal.ReplacedByCode);
-        Assert.False(IraqDivisions.Find(oldKhurmal.ReplacedByCode!)!.IsDeprecated);
-        Assert.Equal(SulaymaniyahCode, oldKhurmal.Governorate.Code);
-        Assert.Equal(oldKhurmal.Name.Ar, IraqDivisions.Find(KhurmalCode)!.Name.Ar);
-        Assert.False(string.IsNullOrWhiteSpace(IraqDivisions.FormatAddress(OldKhurmalCode, Language.Arabic)));
-    }
-
-    [Fact]
-    public void DeprecatedCodes_AreLeftOutOfEveryListButStillFound()
-    {
-        var sulaymaniyah = IraqDivisions.Find(SulaymaniyahCode)!;
-
+        Assert.Null(IraqDivisions.Find(OchaKhurmalCode));
+        Assert.Null(IraqDivisions.Find(OchaHalabjaDistrictCode));
+        Assert.Contains(IraqDivisions.All, division => division.OchaCode == OchaHalabjaDistrictCode && division.Code == HalabjaDistrictCode);
         Assert.DoesNotContain(IraqDivisions.All, division => division.IsDeprecated);
-        Assert.DoesNotContain(sulaymaniyah.Children, division => division.Code == OldHalabjaDistrictCode);
-        Assert.DoesNotContain(sulaymaniyah.Localities, division => division.Code.StartsWith(OldHalabjaDistrictCode, StringComparison.Ordinal));
-        Assert.DoesNotContain(IraqDivisions.Search("خورمال"), result => result.Division.IsDeprecated);
-        Assert.Equal(KhurmalCode, IraqDivisions.Search("خورمال")[0].Division.Code);
-        Assert.NotNull(IraqDivisions.Find(OldHalabjaDistrictCode));
     }
 
     [Fact]
-    public void DeprecatedDistrict_ListsOnlyItsDeprecatedChildren()
-    {
-        var oldDistrict = IraqDivisions.Find(OldHalabjaDistrictCode)!;
-
-        Assert.NotEmpty(oldDistrict.Children);
-        Assert.All(oldDistrict.Children, child => Assert.True(child.IsDeprecated));
-    }
-
-    [Fact]
-    public void IsValid_AndTheAttribute_RejectDeprecatedCodes()
+    public void TheAttribute_AcceptsAMovedCodeAndRejectsItsOchaCode()
     {
         var attribute = new IraqDivisionCodeAttribute(AdminLevel.SubDistrict);
         var context = new ValidationContext(new object()) { MemberName = "AreaCode" };
 
-        Assert.False(IraqDivisions.IsValid(OldKhurmalCode));
-        Assert.NotEqual(ValidationResult.Success, attribute.GetValidationResult(OldKhurmalCode, context));
         Assert.Equal(ValidationResult.Success, attribute.GetValidationResult(KhurmalCode, context));
+        Assert.NotEqual(ValidationResult.Success, attribute.GetValidationResult(OchaKhurmalCode, context));
     }
 
     [Fact]
@@ -102,9 +80,15 @@ public class RestructureAndSourceTests
     [Fact]
     public void OchaCode_EqualsCodeForEveryUnrestructuredDivision()
     {
-        var unrestructured = IraqDivisions.All.Where(division => !division.Code.StartsWith(HalabjaGovernorateCode, StringComparison.Ordinal));
+        static bool HasProjectNumber(Division division) =>
+            division.Level != AdminLevel.Governorate
+            && int.Parse(division.Code.Substring(division.Code.Length - 2), System.Globalization.CultureInfo.InvariantCulture) >= 51;
+        var unrestructured = IraqDivisions.All.Where(division =>
+            !division.Code.StartsWith(HalabjaGovernorateCode, StringComparison.Ordinal) && division.HasBoundary && !HasProjectNumber(division));
 
         Assert.All(unrestructured, division => Assert.Equal(division.Code, division.OchaCode));
+        Assert.All(IraqDivisions.All.Where(division => division.HasBoundary && division.Level != AdminLevel.Governorate),
+            division => Assert.NotNull(division.OchaCode));
     }
 
     [Fact]

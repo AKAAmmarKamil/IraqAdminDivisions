@@ -32,8 +32,22 @@ public class IraqBoundariesTests
     public void Locate_AtDivisionCentre_ReturnsThatDivision(string code)
     {
         var division = IraqDivisions.Find(code)!;
+        if (!division.HasBoundary && division.CarvedFrom is { } carvedFrom)
+        {
+            Assert.Same(carvedFrom, IraqBoundaries.Locate(division.Latitude, division.Longitude));
+            return;
+        }
 
         var located = IraqBoundaries.Locate(division.Latitude, division.Longitude, division.Level);
+
+        if (division.Level == AdminLevel.District && !ReferenceEquals(division, located))
+        {
+            // The centroid lies in an OCHA sub-district the 2024 census moved to a new district: Locate follows its parent.
+            var subDistrict = IraqBoundaries.Locate(division.Latitude, division.Longitude)!;
+            Assert.StartsWith(division.Code, subDistrict.OchaCode, StringComparison.Ordinal);
+            Assert.Same(subDistrict.District, located);
+            return;
+        }
 
         Assert.Same(division, located);
     }
@@ -41,9 +55,21 @@ public class IraqBoundariesTests
     [Fact]
     public void Locate_AtEverySubDistrictCentre_ReturnsTheSubDistrict()
     {
-        foreach (var subDistrict in IraqDivisions.All.Where(division => division.Level == AdminLevel.SubDistrict))
+        foreach (var subDistrict in IraqDivisions.All.Where(division => division.Level == AdminLevel.SubDistrict && division.HasBoundary))
         {
             Assert.Same(subDistrict, IraqBoundaries.Locate(subDistrict.Latitude, subDistrict.Longitude));
+        }
+    }
+
+    [Fact]
+    public void Locate_AtTheCentreOfAUnitWithoutBoundary_ReturnsTheSubDistrictThatListsItAsCarvedOut()
+    {
+        foreach (var unit in IraqDivisions.All.Where(division => division.Level == AdminLevel.SubDistrict && !division.HasBoundary))
+        {
+            var located = IraqBoundaries.Locate(unit.Latitude, unit.Longitude);
+
+            Assert.Same(unit.CarvedFrom, located);
+            Assert.Contains(unit, located!.CarvedOut);
         }
     }
 
@@ -238,7 +264,7 @@ public class IraqBoundariesTests
     public void Index_EverySubDistrictHasPolygons()
     {
         var index = BoundaryIndex.Instance;
-        var subDistricts = IraqDivisions.All.Where(division => division.Level == AdminLevel.SubDistrict).ToArray();
+        var subDistricts = IraqDivisions.All.Where(division => division.Level == AdminLevel.SubDistrict && division.HasBoundary).ToArray();
 
         Assert.Equal(294, subDistricts.Length);
         Assert.Equal(294, index.LoadedDivisions.Count());
